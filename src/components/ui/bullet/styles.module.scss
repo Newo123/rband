@@ -1,0 +1,37 @@
+.bullet {
+	@apply transition-all overflow-hidden duration-500 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full bg-[#000000] text-white flex items-center justify-center;
+
+	@apply h-[8.75rem] w-[8.75rem];
+
+	@screen sm {
+		@apply h-[11.25rem] w-[11.25rem];
+	}
+	@screen lg {
+		@apply w-[15rem] h-[15rem];
+	}
+	&_active {
+		width: calc(100% - 1.5rem);
+		border-radius: 1.875rem;
+		height: fit-content;
+
+		@screen lg {
+			@apply h-[15rem];
+		}
+	}
+	&__title {
+		@apply text-[1.125rem] text-white select-none pointer-events-none font-black leading-130 text-center tracking-[0.04em] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500;
+
+		font-family: var(--font-intro);
+
+		@screen sm {
+			@apply text-[1.375rem];
+		}
+		@screen lg {
+			@apply text-[1.75rem];
+		}
+
+		&_hidden {
+			@apply opacity-0 overflow-hidden invisible;
+		}
+	}
+}

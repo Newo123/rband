@@ -1,0 +1,18 @@
+.modal {
+	@apply fixed bottom-0 left-0 w-full h-full bg-black z-[99] flex flex-col justify-center items-center transition-all duration-1000;
+
+	max-height: 0;
+	overflow: hidden;
+
+	&_active {
+		max-height: 100%;
+	}
+
+	&__close {
+		@apply absolute top-[0.875rem] right-[0.875rem] z-[2] w-[3rem] h-[3rem] text-[#989898] cursor-pointer;
+
+		svg {
+			@apply w-full h-full;
+		}
+	}
+}
