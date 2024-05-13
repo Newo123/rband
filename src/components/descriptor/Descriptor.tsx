@@ -40,23 +40,23 @@ export function Descriptor() {
 			transform: 'none',
 			scale: 1,
 			duration: 0.7,
-			delay: 0.1
+			delay: 0.3
 		})
 		gsap.to(contentRef.current, {
 			transform: 'none',
 			scale: 1,
 			duration: 0.7,
-			delay: 0.1
+			delay: 0.3
 		})
 
 		gsap.to(backgroundRef.current, {
 			scale: 1,
 			duration: 0.7,
-			delay: 0.1
+			delay: 0.3
 		})
 		gsap.to(priceRef.current, {
 			opacity: 1,
-			delay: 0.3
+			delay: 0.4
 		})
 		setIsPlay(true)
 	})
