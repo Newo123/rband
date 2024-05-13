@@ -20,19 +20,6 @@ export function Descriptor() {
 	const contentRef = useRef(null)
 	const backgroundRef = useRef(null)
 	const priceRef = useRef(null)
-	const videoRef = useRef(null)
-
-	// useGSAP(() => {
-	// 	ScrollTrigger.create({
-	// 		trigger: '#descriptor',
-	// 		start: 'top bottom',
-	// 		end: 'bottom top',
-	// 		onUpdate: self => {
-	// 			setScroll(self.progress * 50)
-	// 		},
-	// 		markers: true
-	// 	})
-	// })
 
 	useGSAP(() => {
 		// const tl = gsap.timeline()
@@ -61,10 +48,6 @@ export function Descriptor() {
 		setIsPlay(true)
 	})
 
-	// useEffect(() => {
-	// 	setScroll(scroll)
-	// 	console.log(scroll)
-	// }, [scroll])
 	return (
 		<section
 			className={cn(classes.descriptor)}
