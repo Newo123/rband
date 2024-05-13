@@ -1,18 +1,26 @@
 import DescriptorImg from '/public/descriptor.jpg'
+import { useGSAP } from '@gsap/react'
 import cn from 'clsx'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import { Container } from '@/components/ui/container/Container'
 
 import classes from './styles.module.scss'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, gsap, useGSAP)
 
 export function Descriptor() {
 	const [scroll, setScroll] = useState<number>(0)
+	const [isPlay, setIsPlay] = useState(false)
+
+	const quantityRef = useRef(null)
+	const contentRef = useRef(null)
+	const backgroundRef = useRef(null)
+	const priceRef = useRef(null)
+	const videoRef = useRef(null)
 
 	// useGSAP(() => {
 	// 	ScrollTrigger.create({
@@ -25,6 +33,33 @@ export function Descriptor() {
 	// 		markers: true
 	// 	})
 	// })
+
+	useGSAP(() => {
+		// const tl = gsap.timeline()
+		gsap.to(quantityRef.current, {
+			transform: 'none',
+			scale: 1,
+			duration: 0.7,
+			delay: 0.1
+		})
+		gsap.to(contentRef.current, {
+			transform: 'none',
+			scale: 1,
+			duration: 0.7,
+			delay: 0.1
+		})
+
+		gsap.to(backgroundRef.current, {
+			scale: 1,
+			duration: 0.7,
+			delay: 0.1
+		})
+		gsap.to(priceRef.current, {
+			opacity: 1,
+			delay: 0.3
+		})
+		setIsPlay(true)
+	})
 
 	// useEffect(() => {
 	// 	setScroll(scroll)
@@ -39,7 +74,10 @@ export function Descriptor() {
 				variant='lg'
 				className={classes.descriptor__container}
 			>
-				<div className={classes.descriptor__actions}>
+				<div
+					className={classes.descriptor__actions}
+					ref={backgroundRef}
+				>
 					<div className={classes.descriptor__actionsImage}>
 						<Image
 							src={DescriptorImg}
@@ -51,10 +89,11 @@ export function Descriptor() {
 						<video
 							preload='auto'
 							controls={false}
-							autoPlay
+							autoPlay={isPlay}
 							loop
 							playsInline
 							muted
+							poster={DescriptorImg.src}
 						>
 							<source
 								src='/descriptor.mp4'
@@ -63,7 +102,10 @@ export function Descriptor() {
 						</video>
 					</div>
 				</div>
-				<div className={classes.descriptor__content}>
+				<div
+					className={classes.descriptor__content}
+					ref={contentRef}
+				>
 					<p className={classes.descriptor__contentRegion}>В екатеринбурге</p>
 					<h1 className={cn('site-title-1', classes.descriptor__contentTitle)}>
 						СОЗДАЕМ сайты для бизнеса
@@ -74,13 +116,19 @@ export function Descriptor() {
 					</p>
 				</div>
 				<div className={classes.descriptor__right}>
-					<div className={classes.descriptor__rightQuantity}>
+					<div
+						className={classes.descriptor__rightQuantity}
+						ref={quantityRef}
+					>
 						<div className={classes.descriptor__rightQuantityNumber}>+ 150</div>
 						<div className={classes.descriptor__rightQuantityText}>
 							успешно запущенных сайтов и сервисов
 						</div>
 					</div>
-					<div className={classes.descriptor__rightPrice}>
+					<div
+						className={classes.descriptor__rightPrice}
+						ref={priceRef}
+					>
 						Старт от
 						<span>200 000 ₽</span>
 						<span>30 раб. дней</span>

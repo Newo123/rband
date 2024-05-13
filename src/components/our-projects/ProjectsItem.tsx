@@ -24,22 +24,25 @@ export function ProjectsItem({
 	const itemRef = useRef(null)
 	const [isVisible, setIsVisible] = useState<boolean>(false)
 	useGSAP(() => {
-		ScrollTrigger.create({
-			trigger: itemRef.current,
-			start: 'top bottom',
-			end: 'bottom top',
-			onToggle: self => {
-				if (self.isActive) {
-					const video = self.trigger?.querySelector('video')
-					setIsVisible(!isVisible)
+		if (video) {
+			ScrollTrigger.create({
+				trigger: itemRef.current,
+				start: 'top bottom',
+				end: 'bottom top',
+				onToggle: self => {
+					console.log(self)
+					if (self.isActive) {
+						const video = self.trigger?.querySelector('video')
+						setIsVisible(!isVisible)
 
-					if (video) video.play()
-				} else {
-					const video = self.trigger?.querySelector('video')
-					if (video) video.pause()
+						if (video) video.play()
+					} else {
+						const video = self.trigger?.querySelector('video')
+						if (video) video.pause()
+					}
 				}
-			}
-		})
+			})
+		}
 	})
 	return (
 		<a
@@ -57,7 +60,7 @@ export function ProjectsItem({
 					shadow ? classes.ourProjects__itemImgShadow : ''
 				)}
 			>
-				{isVisible && image && (
+				{image && (
 					<Image
 						src={image}
 						fill={true}
@@ -73,6 +76,7 @@ export function ProjectsItem({
 						muted={true}
 						playsInline
 						controls={false}
+						poster={image}
 					>
 						{video.map((v, i) => (
 							<source

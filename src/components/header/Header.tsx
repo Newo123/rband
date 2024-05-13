@@ -16,6 +16,8 @@ import classes from './styles.module.scss'
 export function Header() {
 	const { setActiveModal } = useModal()
 	const [isFixed, setIsFixed] = useState(false)
+	const [isLoaded, setIsLoaded] = useState(false)
+	const [isTranslate, setIsTranslate] = useState(true)
 	const [isShow, setIsShow] = useState(false)
 	const [isTransition, setIsTransition] = useState(false)
 	const [isHover, setIsHover] = useState(false)
@@ -50,6 +52,7 @@ export function Header() {
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll)
+		setIsLoaded(true)
 
 		return () => {
 			window.removeEventListener('scroll', handleScroll)
@@ -64,6 +67,14 @@ export function Header() {
 				isShow ? classes.header_show : '',
 				isTransition ? classes.header_transition : ''
 			)}
+			onTransitionEnd={() => setIsTranslate(false)}
+			style={
+				!isLoaded
+					? { transform: 'translateY(-100%)', opacity: '0' }
+					: isTranslate
+						? { transition: 'all 0.5s 0.4s ease' }
+						: {}
+			}
 		>
 			<Container
 				variant='lg'

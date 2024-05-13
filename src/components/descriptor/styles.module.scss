@@ -1,5 +1,5 @@
 .descriptor {
-	@apply sticky top-0 w-full max-h-[30rem] min-h-[24rem];
+	@apply sticky top-0 w-full max-h-[30rem] min-h-[24rem] bg-black;
 	height: calc(100dvh - 4.563rem);
 
 	@screen xs {
@@ -47,7 +47,7 @@
 	}
 
 	&__actions {
-		@apply absolute top-0 left-0 w-full h-full;
+		@apply absolute top-0 left-0 w-full h-full scale-[0.5];
 	}
 
 	&__actionsVideo,
@@ -61,7 +61,7 @@
 	}
 
 	&__content {
-		@apply relative z-[3] flex flex-col justify-end h-full w-full max-w-[26.5rem] gap-[0.875rem];
+		@apply relative z-[3] flex flex-col justify-end h-full w-full max-w-[26.5rem] gap-[0.875rem] translate-x-[10%] translate-y-[-10%] scale-[0.8];
 		@screen sm {
 			@apply pb-[2rem];
 		}
@@ -127,7 +127,7 @@
 	}
 
 	&__rightQuantity {
-		@apply text-white hidden flex-col right-[1.25rem] max-w-[13rem] gap-[0.25rem] w-full rounded-[0.25rem] bg-[#000000] bg-opacity-70 py-[1rem] px-[1.125rem] absolute top-[9.063rem];
+		@apply translate-y-[100%] translate-x-[-50%] text-white hidden flex-col right-[1.25rem] max-w-[13rem] gap-[0.25rem] w-full rounded-[0.25rem] bg-[#000000] bg-opacity-70 py-[1rem] px-[1.125rem] absolute top-[9.063rem] scale-[0.8];
 
 		@screen xs {
 			@apply flex;
@@ -139,8 +139,7 @@
 		}
 
 		@screen lg {
-			@apply right-0;
-			@apply top-[7.188rem];
+			@apply right-0 top-[7.188rem];
 		}
 		@screen xl {
 			@apply top-[8.625rem];
@@ -171,7 +170,7 @@
 	}
 
 	&__rightPrice {
-		@apply flex flex-row items-center text-white text-[1.125rem] font-black leading-150 w-full gap-[0.5rem];
+		@apply flex flex-row items-center text-white text-[1.125rem] font-black leading-150 w-full gap-[0.5rem] opacity-0 transition-opacity duration-300;
 		font-family: var(--font-intro);
 
 		@apply text-[0.875rem];
