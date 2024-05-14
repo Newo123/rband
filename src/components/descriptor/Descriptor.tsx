@@ -27,7 +27,7 @@ export function Descriptor() {
 		const tl = gsap.timeline()
 		tl.to(backgroundRef.current, {
 			scale: 0.5,
-			duration: 0.7,
+			duration: 0.4,
 			delay: 0.3
 		}).to(backgroundRef.current, {
 			delay: 0.3,
@@ -46,11 +46,11 @@ export function Descriptor() {
 			transform: 'none',
 			scale: 1,
 			duration: 0.7,
-			delay: 1.3
+			delay: 1
 		})
 		gsap.to(priceRef.current, {
 			opacity: 1,
-			delay: 1.4
+			delay: 1.1
 		})
 	})
 

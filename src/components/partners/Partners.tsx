@@ -21,7 +21,7 @@ export function Partners(partners: Array<{ href: string; image: string }>) {
 			gsap.to(partnersRef.current, {
 				translateY: 0,
 				opacity: 1,
-				delay: 1.6,
+				delay: 1.3,
 				onComplete: () => {
 					setIsAnimate(true)
 				}

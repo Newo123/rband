@@ -76,7 +76,7 @@ export function Header() {
 				!isLoaded
 					? { transform: 'translateY(-100%)', opacity: '0' }
 					: isTranslate && scroll <= 0
-						? { transition: 'all 0.5s 1.4s ease' }
+						? { transition: 'all 0.5s 1.1s ease' }
 						: {}
 			}
 		>
