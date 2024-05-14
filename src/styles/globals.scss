@@ -12,6 +12,10 @@ html {
 		font-size: $fzFor4K;
 	}
 }
+strong,
+b {
+	@apply font-bold;
+}
 
 .site-title-6 {
 	@apply text-[1.25rem] font-black leading-120 uppercase;

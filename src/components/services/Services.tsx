@@ -1,5 +1,4 @@
 import cn from 'clsx'
-import { useRef } from 'react'
 
 import { useServices } from '@/store/services.store'
 
@@ -11,7 +10,6 @@ import classes from './styles.module.scss'
 
 export function Services() {
 	const services = useServices(state => state.services)
-	const titleRef = useRef(null)
 	return (
 		<section className={classes.services}>
 			<Container

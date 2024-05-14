@@ -46,8 +46,28 @@
 		}
 	}
 
+	&__actionsTrigger {
+		@apply absolute top-1/2 -translate-y-1/2 left-1/2 w-full h-full -translate-x-1/2 flex items-center justify-center;
+	}
+
 	&__actions {
-		@apply absolute top-0 left-0 w-full h-full scale-[0.5];
+		@apply scale-[0] h-[40dvh] w-[40dvh];
+
+		@screen xs {
+			@apply h-[50dvh] w-[50dvh];
+		}
+
+		@screen sm {
+			@apply h-[60dvh] w-[60dvh];
+		}
+
+		@screen md {
+			@apply h-[80dvh] w-[80dvh];
+		}
+
+		@screen lg {
+			@apply w-[90dvh] h-[90dvh];
+		}
 	}
 
 	&__actionsVideo,

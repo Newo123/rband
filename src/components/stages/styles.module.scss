@@ -134,10 +134,10 @@
 			@apply text-[1.25rem] mt-[3.625rem];
 		}
 		@screen sm {
-			@apply text-[1.5rem] mt-[6.375rem];
+			@apply text-[1.5rem] mt-[6.375rem] px-[1.5rem];
 		}
 		@screen lg {
-			@apply text-[1.75rem] mt-[4.25rem];
+			@apply text-[1.75rem] px-[2.5rem] mt-[4.25rem];
 		}
 		@screen xl {
 			@apply text-[2rem] mt-[5.875rem];

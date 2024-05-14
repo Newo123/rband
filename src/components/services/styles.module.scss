@@ -84,7 +84,7 @@
 		}
 	}
 	&__itemImg {
-		@apply absolute bottom-[1.5rem] right-[0.875rem] transition-all duration-500 opacity-0;
+		@apply absolute top-1/2 -translate-y-1/2 h-[60%] right-[1.875rem] transition-all duration-500 opacity-0;
 
 		img {
 			position: static !important;
@@ -93,9 +93,9 @@
 
 	@media (hover: hover) {
 		&__list:has(.services__item:hover) &__item {
-			@apply opacity-50;
+			opacity: 0.5 !important;
 		}
-		&__item:hover {
+		&__list:has(.services__item:hover) &__item:hover {
 			opacity: 1 !important;
 		}
 		&__item:hover &__itemActionsLink {

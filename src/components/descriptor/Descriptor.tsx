@@ -20,58 +20,77 @@ export function Descriptor() {
 	const contentRef = useRef(null)
 	const backgroundRef = useRef(null)
 	const priceRef = useRef(null)
+	const descriptorRef = useRef(null)
 
 	useGSAP(() => {
-		gsap.to([quantityRef.current, contentRef.current, backgroundRef.current], {
+		const tl = gsap.timeline()
+		tl.to(backgroundRef.current, {
+			scale: 0.5,
+			duration: 0.7,
+			delay: 0.3
+		}).to(backgroundRef.current, {
+			delay: 0.3,
+			width: '100%',
+			height: '100%',
+			scale: 1,
+			duration: 0.7,
+			onComplete: () => {
+				setIsPlay(true)
+			}
+		})
+		gsap.to([quantityRef.current, contentRef.current], {
 			transform: 'none',
 			scale: 1,
 			duration: 0.7,
-			delay: 0.3
+			delay: 1.3
 		})
 		gsap.to(priceRef.current, {
 			opacity: 1,
-			delay: 0.4
+			delay: 1.4
 		})
-		setIsPlay(true)
 	})
 
 	return (
 		<section
 			className={cn(classes.descriptor)}
 			id='descriptor'
+			ref={descriptorRef}
 		>
 			<Container
 				variant='lg'
 				className={classes.descriptor__container}
 			>
-				<div
-					className={classes.descriptor__actions}
-					ref={backgroundRef}
-				>
-					<div className={classes.descriptor__actionsImage}>
-						<Image
-							src={DescriptorImg}
-							alt='descriptor'
-							sizes='100vw'
-						/>
-					</div>
-					<div className={classes.descriptor__actionsVideo}>
-						<video
-							preload='auto'
-							controls={false}
-							autoPlay={isPlay}
-							loop
-							playsInline
-							muted
-							poster={DescriptorImg.src}
-						>
-							<source
-								src='/descriptor.mp4'
-								type='video/mp4'
+				<div className={classes.descriptor__actionsTrigger}>
+					<div
+						className={classes.descriptor__actions}
+						ref={backgroundRef}
+					>
+						<div className={classes.descriptor__actionsImage}>
+							<Image
+								src={DescriptorImg}
+								alt='descriptor'
+								sizes='100vw'
 							/>
-						</video>
+						</div>
+						<div className={classes.descriptor__actionsVideo}>
+							<video
+								preload='auto'
+								controls={false}
+								autoPlay={isPlay}
+								loop
+								playsInline
+								muted
+								poster={DescriptorImg.src}
+							>
+								<source
+									src='/descriptor.mp4'
+									type='video/mp4'
+								/>
+							</video>
+						</div>
 					</div>
 				</div>
+
 				<div
 					className={classes.descriptor__content}
 					ref={contentRef}
