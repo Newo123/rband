@@ -12,10 +12,9 @@ interface ILink {
 
 interface IProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
 	link: Array<ILink>
-	sliderRef: any
 }
 
-export function ReputationSliderLink({ link, sliderRef, ...rest }: IProps) {
+export function ReputationSliderLink({ link, ...rest }: IProps) {
 	const linkRef = useRef(null)
 
 	useGSAP(() => {
