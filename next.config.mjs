@@ -3,9 +3,9 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 
-	// experimental: {
-	// 	optimizePackageImports: ['gsap', '@iconify/react', 'swiper']
-	// },
+	experimental: {
+		optimizePackageImports: ['gsap', '@iconify/react', 'swiper']
+	},
 
 	images: {
 		formats: ['image/avif', 'image/webp'],
@@ -21,4 +21,4 @@ const nextConfig = {
 	}
 }
 
-export default nextConfig;
+export default nextConfig
