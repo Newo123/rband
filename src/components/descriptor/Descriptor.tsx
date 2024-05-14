@@ -21,6 +21,7 @@ export function Descriptor() {
 	const backgroundRef = useRef(null)
 	const priceRef = useRef(null)
 	const descriptorRef = useRef(null)
+	const videoRef = useRef<HTMLVideoElement>(null)
 
 	useGSAP(() => {
 		const tl = gsap.timeline()
@@ -36,6 +37,9 @@ export function Descriptor() {
 			duration: 0.7,
 			onComplete: () => {
 				setIsPlay(true)
+				if (videoRef.current?.readyState === 4) {
+					videoRef.current?.play()
+				}
 			}
 		})
 		gsap.to([quantityRef.current, contentRef.current], {
@@ -74,6 +78,7 @@ export function Descriptor() {
 						</div>
 						<div className={classes.descriptor__actionsVideo}>
 							<video
+								ref={videoRef}
 								preload='auto'
 								controls={false}
 								autoPlay={isPlay}
