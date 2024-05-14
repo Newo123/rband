@@ -2,15 +2,23 @@ import cn from 'clsx'
 
 import { TypePrinciplesContent } from '@/store/principles.store'
 
+import Heading from '../ui/Heading/Heading'
+
 import classes from './styles.module.scss'
 
 export function PrinciplesContent({ title, items }: TypePrinciplesContent) {
 	return (
 		<div className={classes.principles__content}>
-			<h2 className={cn(classes.principles__title, 'site-title-2')}>{title}</h2>
+			<Heading
+				tag='h2'
+				className={cn(classes.principles__title, 'site-title-2')}
+			>
+				{title}
+			</Heading>
 			{items.length > 0 &&
 				items.map((item, index) => (
-					<div
+					<Heading
+						tag='div'
 						className={classes.principles__contentItem}
 						key={index}
 					>
@@ -26,7 +34,7 @@ export function PrinciplesContent({ title, items }: TypePrinciplesContent) {
 									{t}
 								</p>
 							))}
-					</div>
+					</Heading>
 				))}
 		</div>
 	)

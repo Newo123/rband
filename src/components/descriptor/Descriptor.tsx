@@ -22,21 +22,8 @@ export function Descriptor() {
 	const priceRef = useRef(null)
 
 	useGSAP(() => {
-		// const tl = gsap.timeline()
-		gsap.to(quantityRef.current, {
+		gsap.to([quantityRef.current, contentRef.current, backgroundRef.current], {
 			transform: 'none',
-			scale: 1,
-			duration: 0.7,
-			delay: 0.3
-		})
-		gsap.to(contentRef.current, {
-			transform: 'none',
-			scale: 1,
-			duration: 0.7,
-			delay: 0.3
-		})
-
-		gsap.to(backgroundRef.current, {
 			scale: 1,
 			duration: 0.7,
 			delay: 0.3

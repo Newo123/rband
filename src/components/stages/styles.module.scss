@@ -128,7 +128,7 @@
 	}
 
 	&__descriptionText {
-		@apply mt-[2.5rem] text-center px-[2.875rem] text-[1.125rem] font-semibold leading-150;
+		@apply mt-[2.5rem] text-center text-[1.125rem] font-semibold leading-150;
 
 		@screen xs {
 			@apply text-[1.25rem] mt-[3.625rem];
@@ -146,5 +146,12 @@
 		@screen 2xl {
 			@apply text-[2.5rem] mt-[8.75rem];
 		}
+	}
+
+	&__descriptionTextLine {
+		@apply relative inline-block;
+	}
+	&__descriptionTextMask {
+		@apply absolute top-0 right-0 w-full h-full bg-[#e5e5e5] bg-opacity-80;
 	}
 }

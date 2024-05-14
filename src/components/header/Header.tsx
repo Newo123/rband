@@ -21,6 +21,7 @@ export function Header() {
 	const [isShow, setIsShow] = useState(false)
 	const [isTransition, setIsTransition] = useState(false)
 	const [isHover, setIsHover] = useState(false)
+	const [scroll, setScroll] = useState(0)
 	let currentScroll = 0
 	const handleScroll = (e: Event) => {
 		const window = e.currentTarget as Window
@@ -31,7 +32,7 @@ export function Header() {
 		} else {
 			setIsShow(false)
 		}
-
+		setScroll(window.scrollY)
 		if (header && window.scrollY > header.clientHeight) {
 			setIsFixed(true)
 		} else if (window.scrollY <= 1) {
@@ -71,7 +72,7 @@ export function Header() {
 			style={
 				!isLoaded
 					? { transform: 'translateY(-100%)', opacity: '0' }
-					: isTranslate
+					: isTranslate && scroll <= 0
 						? { transition: 'all 0.5s 0.4s ease' }
 						: {}
 			}

@@ -1,5 +1,8 @@
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 import { TypeService } from '@/store/services.store'
 
@@ -13,8 +16,22 @@ export function ServicesItem({
 	image,
 	href
 }: TypeService) {
+	const itemRef = useRef(null)
+	useGSAP(() => {
+		gsap.to(itemRef.current, {
+			scrollTrigger: {
+				trigger: itemRef.current
+			},
+			opacity: 1,
+			translateY: 0
+		})
+	})
 	return (
-		<div className={classes.services__item}>
+		<div
+			className={classes.services__item}
+			ref={itemRef}
+			style={{ opacity: 0, transform: 'translateY(20%)' }}
+		>
 			<Link
 				href={href}
 				className={classes.services__itemLinkFull}

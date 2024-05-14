@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -15,6 +15,7 @@ import { TextWrap } from '../text-wrap/TextWrap'
 import { TextWrapItem } from '../text-wrap/TextWrapItem'
 import { Container } from '../ui/container/Container'
 
+import { ReputationSliderLink } from './ReputationSliderLink'
 import { RatingItem } from './rating/RatingItem'
 import { RatingList } from './rating/RatingList'
 import classes from './styles.module.scss'
@@ -24,12 +25,17 @@ export function Reputation() {
 	const text = useReputation(state => state.reputation.textWrap)
 	const [isAutoplay, setIsAutoplay] = useState<boolean>(false)
 	const sliderRef = useRef<any>(null)
+	const sliderContainerRef = useRef<any>(null)
 
 	useGSAP(() => {
 		ScrollTrigger.create({
 			trigger: '#reviews-slider',
 			start: 'top bottom',
 			end: 'bottom top',
+			animation: gsap.to(sliderContainerRef.current, {
+				opacity: 1,
+				translateY: 0
+			}),
 			onUpdate: self => {
 				setIsAutoplay(self.isActive)
 			}
@@ -65,12 +71,13 @@ export function Reputation() {
 			>
 				{reputations.length > 0 && (
 					<RatingList>
-						{reputations.map(reputation => (
+						{reputations.map((reputation, index) => (
 							<RatingItem
 								image={reputation.image}
 								text={reputation.text}
 								title={reputation.title}
 								key={reputation.image}
+								index={index}
 							/>
 						))}
 					</RatingList>
@@ -78,6 +85,8 @@ export function Reputation() {
 				<div
 					className={classes.reputation__sliderWrapper}
 					id='reviews-slider'
+					ref={sliderContainerRef}
+					style={{ opacity: 0, transform: 'translateY(100%)' }}
 				>
 					<Swiper
 						modules={[Navigation, Pagination, Autoplay]}
@@ -108,9 +117,10 @@ export function Reputation() {
 								<div className={classes.reputation__sliderSlideAuthor}>
 									Денис, владелец &quot;Battle Bar&quot;
 								</div>
-								<div className={classes.reputation__sliderSlideLinks}>
-									Смотреть <Link href='/'>Брендинг</Link>
-								</div>
+								<ReputationSliderLink
+									link={[{ text: 'Брендинг', href: '/' }]}
+									sliderRef={sliderContainerRef}
+								></ReputationSliderLink>
 							</div>
 							<div className={classes.reputation__sliderSlideImg}>
 								<Image
@@ -137,9 +147,9 @@ export function Reputation() {
 								<div className={classes.reputation__sliderSlideAuthor}>
 									Денис, владелец &quot;Battle Bar&quot;
 								</div>
-								<div className={classes.reputation__sliderSlideLinks}>
-									Смотреть <Link href='/'>Брендинг</Link>
-								</div>
+								<ReputationSliderLink
+									link={[{ text: 'Брендинг', href: '/' }]}
+								></ReputationSliderLink>
 							</div>
 							<div className={classes.reputation__sliderSlideImg}>
 								<Image
@@ -166,9 +176,9 @@ export function Reputation() {
 								<div className={classes.reputation__sliderSlideAuthor}>
 									Денис, владелец &quot;Battle Bar&quot;
 								</div>
-								<div className={classes.reputation__sliderSlideLinks}>
-									Смотреть <Link href='/'>Брендинг</Link>
-								</div>
+								<ReputationSliderLink
+									link={[{ text: 'Брендинг', href: '/' }]}
+								></ReputationSliderLink>
 							</div>
 							<div className={classes.reputation__sliderSlideImg}>
 								<Image

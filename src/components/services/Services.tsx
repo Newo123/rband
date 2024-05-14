@@ -24,10 +24,13 @@ export function Services() {
 				>
 					Мы разрабатываем
 				</Heading>
-				<p className={classes.services__text}>
+				<Heading
+					tag='p'
+					className={classes.services__text}
+				>
 					Для развития бизнеса необходимы инновационные идеи, индивидуальный
 					подход и эффективные инструменты решения задач.
-				</p>
+				</Heading>
 
 				{services.length > 0 && (
 					<div className={classes.services__list}>

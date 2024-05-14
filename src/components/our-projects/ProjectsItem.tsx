@@ -47,14 +47,6 @@ export function ProjectsItem({
 				}
 			}
 		})
-
-		// gsap.to(itemRef.current, {
-		// 	scrollTrigger: {
-		// 		trigger: animationRef.current
-		// 	},
-		// 	translateY: 0,
-		// 	opacity: 1
-		// })
 	})
 	return (
 		<div

@@ -2,6 +2,7 @@ import cn from 'clsx'
 
 import { useFaq } from '@/store/faq.store'
 
+import Heading from '../ui/Heading/Heading'
 import { Container } from '../ui/container/Container'
 
 import { FaqItem } from './FaqItem'
@@ -16,7 +17,12 @@ export function Faq() {
 				variant='lg'
 				className={classes.faq__container}
 			>
-				<h2 className={cn('site-title-2', classes.faq__title)}>{faq.title}</h2>
+				<Heading
+					tag='h2'
+					className={cn('site-title-2', classes.faq__title)}
+				>
+					{faq.title}
+				</Heading>
 				{faq.items.length > 0 && (
 					<FaqList>
 						{faq.items.map((item, index) => (

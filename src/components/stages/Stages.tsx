@@ -1,5 +1,7 @@
 'use client'
 
+import { useRef } from 'react'
+
 import { useStages } from '@/store/stages.store'
 
 import { TextWrap } from '../text-wrap/TextWrap'
@@ -14,6 +16,7 @@ import classes from './styles.module.scss'
 
 export function Stages() {
 	const text = useStages(state => state.stages.textWraps)
+	const textRef = useRef<any>(null)
 
 	return (
 		<section className={classes.stages}>
@@ -43,11 +46,12 @@ export function Stages() {
 					<StagesImages />
 					<StagesList />
 				</div>
-				<div className={classes.stages__descriptionText}>
-					Мы используем комбинацию методов Agile, Waterfall и KISS для
-					продуктивного сотрудничества между всеми вовлеченными сторонами
-					проекта и достижения результатов в срок.
-				</div>
+				<p className={classes.stages__descriptionText}>
+					Мы используем комбинацию методов <strong>Agile</strong>,{' '}
+					<strong>Waterfall</strong> и <strong>KISS</strong> для продуктивного
+					сотрудничества между всеми вовлеченными сторонами проекта и достижения
+					результатов в срок.
+				</p>
 				<Bullet title='Начать <br /> проект'>
 					<Form />
 				</Bullet>
