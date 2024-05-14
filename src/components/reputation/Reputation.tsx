@@ -119,7 +119,6 @@ export function Reputation() {
 								</div>
 								<ReputationSliderLink
 									link={[{ text: 'Брендинг', href: '/' }]}
-									sliderRef={sliderContainerRef}
 								></ReputationSliderLink>
 							</div>
 							<div className={classes.reputation__sliderSlideImg}>
