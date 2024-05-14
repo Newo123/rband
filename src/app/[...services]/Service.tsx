@@ -9,6 +9,7 @@ import { Principles } from '@/components/principles/Principles'
 import { Reputation } from '@/components/reputation/Reputation'
 import { Services } from '@/components/services/Services'
 import { Stages } from '@/components/stages/Stages'
+import { PageWrapper } from '@/components/ui/pageWrapper/PageWrapper'
 
 const partners = [
 	{
@@ -40,7 +41,8 @@ export function Service() {
 	return (
 		<>
 			<Descriptor />
-			<div style={{ backgroundColor: 'white', position: 'relative' }}>
+
+			<PageWrapper>
 				<Partners {...partners} />
 				<Services />
 				<Advantages />
@@ -49,7 +51,7 @@ export function Service() {
 				<Principles />
 				<Reputation />
 				<Faq />
-			</div>
+			</PageWrapper>
 		</>
 	)
 }

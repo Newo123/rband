@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react'
 
 import { useModal } from '@/store/modal.store'
 
+import { useScroll } from '@/hooks/useScroll'
+
 import { Container } from '../ui/container/Container'
 
 import { HeaderNav } from './HeaderNav'
@@ -21,7 +23,8 @@ export function Header() {
 	const [isShow, setIsShow] = useState(false)
 	const [isTransition, setIsTransition] = useState(false)
 	const [isHover, setIsHover] = useState(false)
-	const [scroll, setScroll] = useState(0)
+	const { scroll, setScroll } = useScroll()
+
 	let currentScroll = 0
 	const handleScroll = (e: Event) => {
 		const window = e.currentTarget as Window

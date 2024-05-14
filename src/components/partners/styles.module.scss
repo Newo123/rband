@@ -1,12 +1,15 @@
 .partners {
-	@apply bg-white py-[1.5rem] border-b border-b-[#989898] overflow-x-auto;
+	@apply bg-black border-b border-b-[#989898];
 
-	&::-webkit-scrollbar {
-		@apply hidden;
+	&__trigger {
+		@apply bg-white overflow-x-auto;
+		&::-webkit-scrollbar {
+			@apply hidden;
+		}
 	}
 
 	&__container {
-		@apply flex items-center justify-between gap-[2.125rem];
+		@apply flex items-center justify-between gap-[2.125rem]  py-[1.5rem];
 
 		@screen sm {
 			@apply gap-[2.688rem];

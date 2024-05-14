@@ -17,7 +17,8 @@ const Heading = ({ tag, children, ...rest }: TypeHeading & TypeRef) => {
 				trigger: headingRef.current
 			},
 			translateY: 0,
-			opacity: 1
+			opacity: 1,
+			delay: 0.3
 		})
 	})
 
