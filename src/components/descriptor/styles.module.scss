@@ -176,13 +176,13 @@
 	}
 
 	&__rightPrice {
-		@apply flex flex-row items-center justify-end text-white text-[1.125rem] font-black leading-150 w-full gap-[0.5rem] opacity-0 transition-opacity duration-300 h-full;
+		@apply flex flex-row items-center text-white text-[1.125rem] font-black leading-150 w-full gap-[0.5rem] opacity-0 transition-opacity duration-300 h-full;
 		font-family: var(--font-intro);
 
 		@apply text-[0.875rem];
 
 		@screen sm {
-			@apply flex-col items-start gap-0 text-[1rem];
+			@apply flex-col items-start gap-0 text-[1rem] justify-end;
 		}
 
 		@screen xl {

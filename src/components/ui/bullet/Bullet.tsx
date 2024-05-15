@@ -25,30 +25,28 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 				trigger: bulletRef.current,
 				start: 'top 75%',
 				end: 'bottom 25%',
-
-				onToggle: self => {
-					if (self.isActive) {
-						gsap
-							.timeline()
-							.add(() => setIsActive(self.isActive))
-							.to(titleRef.current, {
-								opacity: 0
-							})
-							.to(childRef.current, {
-								opacity: 1,
-								delay: 0.3
-							})
-					} else {
-						gsap
-							.timeline()
-							.to(childRef.current, {
-								opacity: 0
-							})
-							.add(() => setIsActive(self.isActive))
-							.to(titleRef.current, {
-								opacity: 1
-							})
-					}
+				onEnter: self => {
+					gsap
+						.timeline()
+						.add(() => setIsActive(self.isActive))
+						.to(titleRef.current, {
+							opacity: 0
+						})
+						.to(childRef.current, {
+							opacity: 1,
+							delay: 0.3
+						})
+				},
+				onLeaveBack: self => {
+					gsap
+						.timeline()
+						.to(childRef.current, {
+							opacity: 0
+						})
+						.add(() => setIsActive(self.isActive))
+						.to(titleRef.current, {
+							opacity: 1
+						})
 				}
 			})
 		},

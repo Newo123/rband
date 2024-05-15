@@ -42,8 +42,6 @@ export function Descriptor() {
 		if (scale >= 0) {
 			setScaleContent(scale)
 		}
-		// !videoRef.current?.paused
-		// videoRef.current?.paused
 
 		if (
 			scroll > descriptorRef.current.clientHeight &&
