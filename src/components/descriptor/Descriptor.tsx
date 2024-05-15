@@ -24,7 +24,7 @@ export function Descriptor() {
 	const contentRef = useRef<any>(null)
 	const backgroundRef = useRef(null)
 	const priceRef = useRef(null)
-	const descriptorRef = useRef(null)
+	const descriptorRef = useRef<any>(null)
 	const videoRef = useRef<HTMLVideoElement>(null)
 	const actionsRef = useRef(null)
 	const { scroll } = useScroll()
@@ -42,6 +42,22 @@ export function Descriptor() {
 		if (scale >= 0) {
 			setScaleContent(scale)
 		}
+		// !videoRef.current?.paused
+		// videoRef.current?.paused
+
+		if (
+			scroll > descriptorRef.current.clientHeight &&
+			!videoRef.current?.paused &&
+			isPlay
+		) {
+			videoRef.current?.pause()
+		} else if (
+			scroll <= descriptorRef.current.clientHeight &&
+			videoRef.current?.paused &&
+			isPlay
+		) {
+			videoRef.current?.play()
+		}
 	}, [scroll])
 
 	useGSAP(() => {
@@ -49,11 +65,13 @@ export function Descriptor() {
 		tl.to(backgroundRef.current, {
 			maskSize: '50dvh 50dvh',
 			duration: 1
-		}).to(backgroundRef.current, {
-			maskSize: '100vw 100vh',
-			delay: 0.5,
-			duration: 1
 		})
+			.to(backgroundRef.current, {
+				maskSize: '100vw 100vh',
+				delay: 0.5,
+				duration: 1
+			})
+			.to(backgroundRef.current, { maskSize: '100% 100%' })
 
 		gsap.to(actionsRef.current, {
 			delay: 1.5,
@@ -68,7 +86,6 @@ export function Descriptor() {
 		})
 		gsap.to([quantityRef.current, contentRef.current], {
 			transform: 'none',
-
 			scale: 1,
 			duration: 1,
 			delay: 1.6
