@@ -4,25 +4,45 @@ import cn from 'clsx'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Container } from '@/components/ui/container/Container'
+
+import { useScroll } from '@/hooks/useScroll'
 
 import classes from './styles.module.scss'
 
 gsap.registerPlugin(ScrollTrigger, gsap, useGSAP)
 
 export function Descriptor() {
-	const [scroll, setScroll] = useState<number>(0)
 	const [isPlay, setIsPlay] = useState(false)
+	const [translateContent, setTranslateContent] = useState(0)
+	const [opacityContent, setOpacityContent] = useState(1)
+	const [scaleContent, setScaleContent] = useState(1)
 
 	const quantityRef = useRef(null)
-	const contentRef = useRef(null)
+	const contentRef = useRef<any>(null)
 	const backgroundRef = useRef(null)
 	const priceRef = useRef(null)
 	const descriptorRef = useRef(null)
 	const videoRef = useRef<HTMLVideoElement>(null)
 	const actionsRef = useRef(null)
+	const { scroll } = useScroll()
+
+	useEffect(() => {
+		const translate = scroll / 40
+		const opacity = 1 - scroll / 1000
+		const scale = 1 - scroll / 2000
+		if (translate < 20) {
+			setTranslateContent(translate)
+		}
+		if (opacity >= 0) {
+			setOpacityContent(opacity)
+		}
+		if (scale >= 0) {
+			setScaleContent(scale)
+		}
+	}, [scroll])
 
 	useGSAP(() => {
 		const tl = gsap.timeline()
@@ -48,6 +68,7 @@ export function Descriptor() {
 		})
 		gsap.to([quantityRef.current, contentRef.current], {
 			transform: 'none',
+
 			scale: 1,
 			duration: 1,
 			delay: 1.6
@@ -105,18 +126,31 @@ export function Descriptor() {
 				</div>
 
 				<div
-					className={classes.descriptor__content}
-					ref={contentRef}
+					style={{
+						transform: `translateY(-${translateContent}%) scale(${scaleContent})`,
+						position: 'relative',
+						zIndex: '2',
+						opacity: opacityContent,
+						height: '100%'
+					}}
 				>
-					<p className={classes.descriptor__contentRegion}>В екатеринбурге</p>
-					<h1 className={cn('site-title-1', classes.descriptor__contentTitle)}>
-						СОЗДАЕМ сайты для бизнеса
-					</h1>
-					<p className={classes.descriptor__contentText}>
-						создадим сайт для бизнеса с презентацией услуг и целевыми действиями
-						для заявок. Решим задачи имиджа компании.
-					</p>
+					<div
+						className={classes.descriptor__content}
+						ref={contentRef}
+					>
+						<p className={classes.descriptor__contentRegion}>В екатеринбурге</p>
+						<h1
+							className={cn('site-title-1', classes.descriptor__contentTitle)}
+						>
+							СОЗДАЕМ сайты для бизнеса
+						</h1>
+						<p className={classes.descriptor__contentText}>
+							создадим сайт для бизнеса с презентацией услуг и целевыми
+							действиями для заявок. Решим задачи имиджа компании.
+						</p>
+					</div>
 				</div>
+
 				<div className={classes.descriptor__right}>
 					<div
 						className={classes.descriptor__rightQuantity}
@@ -130,6 +164,14 @@ export function Descriptor() {
 					<div
 						className={classes.descriptor__rightPrice}
 						ref={priceRef}
+						style={
+							isPlay
+								? {
+										transform: `translateY(-${translateContent}%) scale(${scaleContent})`,
+										opacity: opacityContent
+									}
+								: {}
+						}
 					>
 						Старт от
 						<span>200 000 ₽</span>

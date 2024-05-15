@@ -52,22 +52,6 @@
 		mask-repeat: no-repeat;
 		mask-position: 50% 50%;
 		mask-size: 0dvh 0dvh;
-
-		// @screen xs {
-		// 	mask-size: 50dvh 50dvh;
-		// }
-
-		// @screen sm {
-		// 	mask-size: 60dvh 60dvh;
-		// }
-
-		// @screen md {
-		// 	mask-size: 80dvh 80dvh;
-		// }
-
-		// @screen lg {
-		// 	mask-size: 50dvh 50dvh;
-		// }
 	}
 
 	&__actions {
@@ -192,7 +176,7 @@
 	}
 
 	&__rightPrice {
-		@apply flex flex-row items-center text-white text-[1.125rem] font-black leading-150 w-full gap-[0.5rem] opacity-0 transition-opacity duration-300;
+		@apply flex flex-row items-center justify-end text-white text-[1.125rem] font-black leading-150 w-full gap-[0.5rem] opacity-0 transition-opacity duration-300 h-full;
 		font-family: var(--font-intro);
 
 		@apply text-[0.875rem];

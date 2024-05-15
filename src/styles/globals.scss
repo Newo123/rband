@@ -68,7 +68,7 @@ b {
 	}
 }
 body {
-	@apply text-black;
+	@apply text-black overflow-x-hidden;
 }
 
 .under-line-gray,
