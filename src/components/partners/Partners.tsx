@@ -21,7 +21,8 @@ export function Partners(partners: Array<{ href: string; image: string }>) {
 			gsap.to(partnersRef.current, {
 				translateY: 0,
 				opacity: 1,
-				delay: 1.3,
+				delay: 1.9,
+				duration: 0.5,
 				onComplete: () => {
 					setIsAnimate(true)
 				}
@@ -30,18 +31,7 @@ export function Partners(partners: Array<{ href: string; image: string }>) {
 	})
 
 	return (
-		<div
-			className={classes.partners}
-			// ref={partnersRef}
-			// style={
-			// 	!isAnimate && scroll <= 0
-			// 		? {
-			// 				transform: 'translateY(100%)',
-			// 				opacity: 0
-			// 			}
-			// 		: {}
-			// }
-		>
+		<div className={classes.partners}>
 			<div
 				className={classes.partners__trigger}
 				ref={partnersRef}

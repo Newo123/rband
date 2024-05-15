@@ -22,19 +22,23 @@ export function Descriptor() {
 	const priceRef = useRef(null)
 	const descriptorRef = useRef(null)
 	const videoRef = useRef<HTMLVideoElement>(null)
+	const actionsRef = useRef(null)
 
 	useGSAP(() => {
 		const tl = gsap.timeline()
 		tl.to(backgroundRef.current, {
-			scale: 0.5,
-			duration: 0.4,
-			delay: 0.3
+			maskSize: '50dvh 50dvh',
+			duration: 1
 		}).to(backgroundRef.current, {
-			delay: 0.3,
-			width: '100%',
-			height: '100%',
+			maskSize: '100vw 100vh',
+			delay: 0.5,
+			duration: 1
+		})
+
+		gsap.to(actionsRef.current, {
+			delay: 1.5,
 			scale: 1,
-			duration: 0.7,
+			duration: 1,
 			onComplete: () => {
 				setIsPlay(true)
 				if (videoRef.current?.readyState === 4) {
@@ -45,12 +49,13 @@ export function Descriptor() {
 		gsap.to([quantityRef.current, contentRef.current], {
 			transform: 'none',
 			scale: 1,
-			duration: 0.7,
-			delay: 1
+			duration: 1,
+			delay: 1.6
 		})
 		gsap.to(priceRef.current, {
 			opacity: 1,
-			delay: 1.1
+			delay: 2.1,
+			duration: 0.3
 		})
 	})
 
@@ -64,10 +69,13 @@ export function Descriptor() {
 				variant='lg'
 				className={classes.descriptor__container}
 			>
-				<div className={classes.descriptor__actionsTrigger}>
+				<div
+					className={classes.descriptor__actionsTrigger}
+					ref={backgroundRef}
+				>
 					<div
 						className={classes.descriptor__actions}
-						ref={backgroundRef}
+						ref={actionsRef}
 					>
 						<div className={classes.descriptor__actionsImage}>
 							<Image
