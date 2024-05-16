@@ -15,33 +15,35 @@ export function StagesListItem({
 	title,
 	isActive,
 	index,
-	setActiveStages,
-	tl
+	setActiveStages
 }: TypeStagesContent & {
 	setActiveStages: (number: string) => void
-} & { index: number; tl: any }) {
+} & { index: number }) {
 	const itemRef = useRef(null)
 	const [state, setState] = useState(true)
 
-	useGSAP(() => {
-		gsap.to(itemRef.current, {
-			scrollTrigger: {
-				trigger: '#stages-list',
-				onEnter: self => {
-					if (index === 0) {
-						setState(false)
+	useGSAP(
+		() => {
+			gsap.to(itemRef.current, {
+				scrollTrigger: {
+					trigger: '#stages-list',
+					onEnter: self => {
+						if (index === 0) {
+							setState(false)
 
-						setTimeout(() => {
-							setState(true)
-						}, 2500)
+							setTimeout(() => {
+								setState(true)
+							}, 2500)
+						}
 					}
-				}
-			},
-			delay: index === 0 ? 0.3 : index / 3,
-			opacity: 1,
-			translateY: 0
-		})
-	})
+				},
+				delay: index === 0 ? 0.3 : index / 3,
+				opacity: 1,
+				translateY: 0
+			})
+		},
+		{ dependencies: [setState] }
+	)
 
 	return (
 		<li

@@ -70,6 +70,9 @@ b {
 body {
 	@apply text-black overflow-x-hidden;
 }
+.swiper-slide-active {
+	opacity: 1 !important;
+}
 
 .under-line-gray,
 .under-line-white {

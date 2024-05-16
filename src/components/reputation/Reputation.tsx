@@ -8,6 +8,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper as TypeSwiper } from 'swiper/types'
 
 import { useReputation } from '@/store/reputation.store'
 
@@ -23,25 +24,52 @@ import classes from './styles.module.scss'
 export function Reputation() {
 	const reputations = useReputation(state => state.reputation.reputations)
 	const text = useReputation(state => state.reputation.textWrap)
-	const [isAutoplay, setIsAutoplay] = useState<boolean>(false)
+	const [isAutoplay, setIsAutoplay] = useState({})
 	const sliderRef = useRef<any>(null)
 	const sliderContainerRef = useRef<any>(null)
 	const reputationRef = useRef<any>()
+	const swiperRef = useRef<any>(null)
 
-	useGSAP(() => {
-		ScrollTrigger.create({
-			trigger: '#reviews-slider',
-			start: 'top bottom',
-			end: 'bottom top',
-			animation: gsap.to(sliderContainerRef.current, {
-				opacity: 1,
-				translateY: 0
-			}),
-			onUpdate: self => {
-				setIsAutoplay(self.isActive)
-			}
-		})
-	})
+	const swiperOptions = {
+		modules: [Navigation, Pagination, Autoplay],
+		loop: true,
+		className: classes.reputation__slider,
+		onSwiper: (instance: TypeSwiper) => (swiperRef.current = instance),
+		ref: sliderRef,
+		style: { opacity: 0, transform: 'translateY(100%)' },
+		enabled: false,
+		autoplay: {
+			delay: 3000,
+			pauseOnMouseEnter: true,
+			stopOnLastSlide: false,
+			disableOnInteraction: false
+		}
+	}
+
+	useGSAP(
+		() => {
+			ScrollTrigger.create({
+				trigger: sliderContainerRef.current,
+				start: 'top bottom',
+				end: 'bottom top',
+				animation: gsap.to(sliderRef.current, {
+					opacity: 1,
+					translateY: 0,
+					delay: 1,
+					onComplete: () => {
+						swiperRef.current.autoplay.start()
+					}
+				}),
+				onEnter: () => {
+					swiperRef.current.enabled = true
+				}
+			})
+		},
+		{
+			scope: sliderContainerRef.current,
+			dependencies: [isAutoplay, setIsAutoplay]
+		}
+	)
 
 	return (
 		<section className={classes.reputation}>
@@ -85,20 +113,8 @@ export function Reputation() {
 					className={classes.reputation__sliderWrapper}
 					id='reviews-slider'
 					ref={sliderContainerRef}
-					style={{ opacity: 0, transform: 'translateY(100%)' }}
 				>
-					<Swiper
-						modules={[Navigation, Pagination, Autoplay]}
-						loop={true}
-						className={classes.reputation__slider}
-						onSwiper={instance => (sliderRef.current = instance)}
-						autoplay={{
-							delay: 3000,
-							pauseOnMouseEnter: true,
-							stopOnLastSlide: false,
-							disableOnInteraction: false
-						}}
-					>
+					<Swiper {...swiperOptions}>
 						<SwiperSlide className={classes.reputation__sliderSlide}>
 							<div className={classes.reputation__sliderSlideContent}>
 								<div className={classes.reputation__sliderSlideTitle}>

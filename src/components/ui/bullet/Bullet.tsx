@@ -37,7 +37,6 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 		} else if (resize.isScreenXl || resize.isScreenXxl) {
 			setMaxHeight('15rem')
 		}
-		console.log(maxHeight, resize)
 	}
 
 	useEffect(() => {
@@ -55,7 +54,6 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 				start: 'top 75%',
 				end: 'bottom 25%',
 				onEnter: self => {
-					console.log('onEnter')
 					gsap
 						.timeline()
 						.to(bulletRef.current, {
@@ -66,8 +64,6 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 						.to(titleRef.current, {
 							opacity: 0
 						})
-						// .add(() => setIsActive(true))
-
 						.to(childRef.current, {
 							opacity: 1,
 							delay: 0.3
@@ -77,8 +73,6 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 					console.log('onLeaveBack')
 					gsap
 						.timeline()
-						// .add(() => setIsActive(false))
-
 						.to(childRef.current, {
 							opacity: 0
 						})

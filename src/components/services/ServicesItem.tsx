@@ -6,6 +6,8 @@ import { useRef } from 'react'
 
 import { TypeService } from '@/store/services.store'
 
+import { Button } from '../ui/button/Button'
+
 import classes from './styles.module.scss'
 
 export function ServicesItem({
@@ -40,10 +42,14 @@ export function ServicesItem({
 			<p className={classes.services__itemPrice}>{price}</p>
 			<p className={classes.services__itemText}>{text}</p>
 			<div className={classes.services__itemActions}>
-				<button className={classes.services__itemActionsButton}>
+				<Button className={classes.services__itemActionsButton}>
 					заказать
 					<span>проект</span>
-				</button>
+				</Button>
+				{/* <button className={classes.services__itemActionsButton}>
+					заказать
+					<span>проект</span>
+				</button> */}
 				<Link
 					href={href}
 					className={classes.services__itemActionsLink}

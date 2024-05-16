@@ -24,9 +24,12 @@
 			@apply mt-[4.375rem];
 		}
 	}
+	&__slider {
+		@apply overflow-visible;
+	}
 
 	&__sliderSlide {
-		@apply flex items-center flex-col-reverse gap-[2.5rem];
+		@apply flex items-center flex-col-reverse gap-[2.5rem] opacity-0 transition-opacity duration-300;
 
 		@screen lg {
 			@apply flex-row gap-[1.875rem];
