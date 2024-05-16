@@ -1,21 +1,21 @@
 .bullet {
-	@apply transition-all overflow-hidden duration-500 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full bg-[#000000] text-white flex items-center justify-center;
-
-	@apply h-[8.75rem] w-[8.75rem];
+	@apply h-full max-h-[8.75rem] w-[8.75rem] transition-all overflow-hidden duration-500 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full bg-[#000000] text-white flex items-center justify-center;
 
 	@screen sm {
-		@apply h-[11.25rem] w-[11.25rem];
+		@apply max-h-[11.25rem] w-[11.25rem];
 	}
 	@screen lg {
-		@apply w-[15rem] h-[15rem];
+		@apply w-[15rem] max-h-[15rem];
 	}
 	&_active {
 		width: calc(100% - 1.5rem);
 		border-radius: 1.875rem;
-		height: fit-content;
-
+		@apply max-h-[19.813rem];
+		@screen sm {
+			@apply max-h-[20rem];
+		}
 		@screen lg {
-			@apply h-[15rem];
+			@apply max-h-[15rem];
 		}
 	}
 	&__title {

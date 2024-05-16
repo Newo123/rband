@@ -11,6 +11,6 @@ export const metadata: Metadata = {
 	}
 }
 
-export default function ServicesPage() {
+export default function ServicesPage({ params }: { params: string }) {
 	return <Service />
 }

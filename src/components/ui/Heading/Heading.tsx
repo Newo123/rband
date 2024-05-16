@@ -11,16 +11,19 @@ const Heading = ({ tag, children, ...rest }: TypeHeading & TypeRef) => {
 	const Tag = (props: any) =>
 		createElement(tag, { ref: headingRef, ...props }, children)
 
-	useGSAP(() => {
-		gsap.to(headingRef.current, {
-			scrollTrigger: {
-				trigger: headingRef.current
-			},
-			translateY: 0,
-			opacity: 1,
-			delay: 0.3
-		})
-	})
+	useGSAP(
+		() => {
+			gsap.to(headingRef.current, {
+				scrollTrigger: {
+					trigger: headingRef.current
+				},
+				translateY: 0,
+				opacity: 1,
+				delay: 0.3
+			})
+		},
+		{ scope: headingRef }
+	)
 
 	return (
 		<Tag

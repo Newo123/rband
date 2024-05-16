@@ -16,7 +16,7 @@ import classes from './styles.module.scss'
 
 export function Stages() {
 	const text = useStages(state => state.stages.textWraps)
-	const textRef = useRef<any>(null)
+	const textRef = useRef<any>()
 
 	return (
 		<section className={classes.stages}>
@@ -24,6 +24,7 @@ export function Stages() {
 				<TextWrap
 					id='stages-text-wrap'
 					className={classes.stages__textWrap}
+					ref={textRef}
 				>
 					{text.map((t, i) => {
 						return (
@@ -31,6 +32,7 @@ export function Stages() {
 								image={t.image}
 								index={i}
 								key={i}
+								reference={textRef}
 								id='#stages-text-wrap'
 							/>
 						)

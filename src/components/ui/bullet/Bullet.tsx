@@ -4,8 +4,16 @@ import { useGSAP } from '@gsap/react'
 import cn from 'clsx'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { HTMLAttributes, PropsWithChildren, useRef, useState } from 'react'
+import {
+	HTMLAttributes,
+	PropsWithChildren,
+	useEffect,
+	useRef,
+	useState
+} from 'react'
 import ReactHtmlParser from 'react-html-parser'
+
+import { useResize } from '@/hooks/useResize'
 
 import classes from './styles.module.scss'
 
@@ -18,6 +26,27 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 	const titleRef = useRef(null)
 	const childRef = useRef(null)
 	const [isActive, setIsActive] = useState(false)
+	const resize = useResize()
+	const [maxHeight, setMaxHeight] = useState<string>('')
+
+	const getMaxHeight = () => {
+		if (resize.isScreenXS) {
+			setMaxHeight('19.813rem')
+		} else if (resize.isScreenSm || resize.isScreenMd) {
+			setMaxHeight('11.25rem')
+		} else if (resize.isScreenXl || resize.isScreenXxl) {
+			setMaxHeight('15rem')
+		}
+		console.log(maxHeight, resize)
+	}
+
+	useEffect(() => {
+		getMaxHeight()
+	}, [resize])
+
+	useEffect(() => {
+		getMaxHeight()
+	}, [])
 
 	useGSAP(
 		() => {
@@ -26,24 +55,39 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 				start: 'top 75%',
 				end: 'bottom 25%',
 				onEnter: self => {
+					console.log('onEnter')
 					gsap
 						.timeline()
-						.add(() => setIsActive(self.isActive))
+						.to(bulletRef.current, {
+							width: 'calc(100% - 1.5rem)',
+							borderRadius: '1.875rem',
+							maxHeight: maxHeight
+						})
 						.to(titleRef.current, {
 							opacity: 0
 						})
+						// .add(() => setIsActive(true))
+
 						.to(childRef.current, {
 							opacity: 1,
 							delay: 0.3
 						})
 				},
 				onLeaveBack: self => {
+					console.log('onLeaveBack')
 					gsap
 						.timeline()
+						// .add(() => setIsActive(false))
+
 						.to(childRef.current, {
 							opacity: 0
 						})
-						.add(() => setIsActive(self.isActive))
+						.to(bulletRef.current, {
+							width: '',
+							borderRadius: '',
+							maxHeight: ''
+						})
+
 						.to(titleRef.current, {
 							opacity: 1
 						})
@@ -52,7 +96,7 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 		},
 		{
 			scope: bulletRef,
-			dependencies: [isActive, setIsActive, bulletRef, titleRef]
+			dependencies: [isActive, setIsActive, bulletRef, titleRef, maxHeight]
 		}
 	)
 

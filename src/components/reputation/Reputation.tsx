@@ -2,7 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -26,6 +26,7 @@ export function Reputation() {
 	const [isAutoplay, setIsAutoplay] = useState<boolean>(false)
 	const sliderRef = useRef<any>(null)
 	const sliderContainerRef = useRef<any>(null)
+	const reputationRef = useRef<any>()
 
 	useGSAP(() => {
 		ScrollTrigger.create({
@@ -42,20 +43,18 @@ export function Reputation() {
 		})
 	})
 
-	useEffect(() => {
-		// sliderRef.current?.autoplay[isAutoplay ? 'start' : 'stop']()
-	}, [isAutoplay])
-
 	return (
 		<section className={classes.reputation}>
 			{text.length > 0 && (
 				<TextWrap
 					id='reputation-text-wrap'
 					variant='reverse'
+					ref={reputationRef}
 				>
 					{text.map((t, i) => {
 						return (
 							<TextWrapItem
+								reference={reputationRef}
 								image={t.image}
 								index={i + 1}
 								key={i}
