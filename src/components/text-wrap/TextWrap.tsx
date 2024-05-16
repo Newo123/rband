@@ -11,7 +11,7 @@ interface ITextWrap extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
 	variant?: TypeTextWrapVariant
 }
 
-export const TextWrap = forwardRef(
+const TextWrap = forwardRef(
 	({ children, className, variant, ...rest }: ITextWrap, reference: any) => {
 		return (
 			<div
@@ -28,3 +28,6 @@ export const TextWrap = forwardRef(
 		)
 	}
 )
+
+TextWrap.displayName = 'TextWrap'
+export { TextWrap }
