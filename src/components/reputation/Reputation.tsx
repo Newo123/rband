@@ -38,6 +38,7 @@ export function Reputation() {
 		ref: sliderRef,
 		style: { opacity: 0, transform: 'translateY(100%)' },
 		enabled: false,
+		speed: 500,
 		autoplay: {
 			delay: 3000,
 			pauseOnMouseEnter: true,
