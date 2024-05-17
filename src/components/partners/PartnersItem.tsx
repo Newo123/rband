@@ -12,7 +12,10 @@ export function PartnersItem({ href, image }: { image: string; href: string }) {
 			<Image
 				src={image}
 				alt={image}
-				fill
+				// fill
+				width={160}
+				height={52}
+				quality={100}
 			/>
 		</Link>
 	)

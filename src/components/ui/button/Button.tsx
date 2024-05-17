@@ -19,7 +19,10 @@ export function Button({
 			Observer.create({
 				target: buttonRef.current,
 				type: 'pointer',
-				onMove: self => {
+				onDrag: (self: Observer) => {
+					console.log(self)
+				},
+				onMove: (self: Observer) => {
 					gsap.to(followerRef.current, {
 						duration: 0,
 						delay: 0,
@@ -29,17 +32,16 @@ export function Button({
 						translateY:
 							// @ts-ignore
 							(self.event.layerY / buttonRef.current.clientHeight) * 100 + '%'
-						// scale: 1
 					})
 				},
-				onHover: self => {
+				onHover: (self: Observer) => {
 					gsap.to(followerRef.current, {
 						duration: 0.3,
 						delay: 0,
 						scale: 1
 					})
 				},
-				onHoverEnd: self => {
+				onHoverEnd: (self: Observer) => {
 					gsap.to(followerRef.current, {
 						duration: 0.3,
 						delay: 0,
