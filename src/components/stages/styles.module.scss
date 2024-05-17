@@ -53,6 +53,13 @@
 		@screen lg {
 			@apply px-[3.375rem];
 		}
+		// min-h-[21.875rem]
+		// @screen xl {
+		// 	@apply min-h-[22.5rem];
+		// }
+		// @screen 2xl {
+		// 	@apply min-h-[23.75rem];
+		// }
 	}
 
 	&__imagesContainer {
@@ -118,13 +125,12 @@
 	}
 	&__listText {
 		@apply text-[0.875rem] font-medium leading-150 max-h-0 overflow-hidden invisible opacity-0;
-
 		@screen sm {
 			@apply text-[1rem];
 		}
 	}
 	&__listItem_active &__listText {
-		@apply overflow-visible max-h-[37.5rem] visible opacity-100 mt-[0.375rem]  transition-all duration-500;
+		@apply overflow-visible max-h-full visible opacity-100  mt-[0.375rem];
 	}
 
 	&__descriptionText {

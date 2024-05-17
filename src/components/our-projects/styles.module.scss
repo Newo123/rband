@@ -98,7 +98,7 @@
 	&__itemImg {
 		@apply relative top-0 left-0 w-full h-full rounded-[0.375rem] overflow-hidden transition-transform ease-linear duration-200;
 		box-shadow: 0px 0.25rem 0.938rem 0px rgba(0, 0, 0, 0.2);
-
+		transform: translate3d(0, 0, 0);
 		@screen lg {
 			@apply absolute;
 		}
