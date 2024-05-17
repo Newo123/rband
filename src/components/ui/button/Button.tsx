@@ -40,7 +40,6 @@ export function Button({
 					})
 				},
 				onHoverEnd: self => {
-					console.log('onHoverEnd', self)
 					gsap.to(followerRef.current, {
 						duration: 0.2,
 						delay: 0,
@@ -55,8 +54,6 @@ export function Button({
 		<button
 			className={cn(classes.button, className)}
 			ref={buttonRef}
-			// onMouseMove={handleEnter}
-			// onMouseEnter={handleEnter}
 		>
 			<div
 				className={classes.button__follower}

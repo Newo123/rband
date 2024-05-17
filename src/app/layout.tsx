@@ -9,7 +9,6 @@ import { Header } from '@/components/header/Header'
 import { Localization } from '@/components/localization/Localization'
 import { Modal } from '@/components/ui/modal/Modal'
 
-import SmoothScroll from '@/providers/SmoothScroll'
 import { Providers } from '@/providers/providers'
 
 import { ILang } from '@/types/lang.types'
@@ -56,14 +55,12 @@ export default function RootLayout({ children, params }: Readonly<Props>) {
 		>
 			<body>
 				<Providers>
-					<SmoothScroll>
-						<Header />
-						<main>{children}</main>
-						<Footer />
-						<Modal id='country'>
-							<Localization />
-						</Modal>
-					</SmoothScroll>
+					<Header />
+					<main>{children}</main>
+					<Footer />
+					<Modal id='country'>
+						<Localization />
+					</Modal>
 				</Providers>
 			</body>
 		</html>

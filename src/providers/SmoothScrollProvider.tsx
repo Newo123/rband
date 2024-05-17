@@ -3,7 +3,7 @@
 import { ReactLenis } from 'lenis/react'
 import { PropsWithChildren } from 'react'
 
-export default function SmoothScroll({ children }: PropsWithChildren) {
+export default function SmoothScrollProvider({ children }: PropsWithChildren) {
 	return (
 		<ReactLenis
 			root

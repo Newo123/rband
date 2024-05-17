@@ -16,19 +16,22 @@ export function Partners(partners: Array<{ href: string; image: string }>) {
 	const { scroll } = useScroll()
 	const [isAnimate, setIsAnimate] = useState(false)
 
-	useGSAP(() => {
-		if (scroll <= 0 && !isAnimate) {
-			gsap.to(partnersRef.current, {
-				translateY: 0,
-				opacity: 1,
-				delay: 1.9,
-				duration: 0.5,
-				onComplete: () => {
-					setIsAnimate(true)
-				}
-			})
-		}
-	})
+	useGSAP(
+		() => {
+			if (scroll <= 0 && !isAnimate) {
+				gsap.to(partnersRef.current, {
+					translateY: 0,
+					opacity: 1,
+					delay: 1.9,
+					duration: 0.5,
+					onComplete: () => {
+						setIsAnimate(true)
+					}
+				})
+			}
+		},
+		{ scope: partnersRef }
+	)
 
 	return (
 		<div className={classes.partners}>

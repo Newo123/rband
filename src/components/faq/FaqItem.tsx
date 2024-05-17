@@ -11,7 +11,7 @@ import Heading from '../ui/Heading/Heading'
 
 import classes from './styles.module.scss'
 
-export function FaqItem({ title, typography }: TypeFaqItem) {
+export const FaqItem = ({ title, typography }: TypeFaqItem) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 
 	return (
