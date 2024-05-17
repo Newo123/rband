@@ -2,11 +2,6 @@
 	@apply fixed bottom-0 left-0 w-full h-full bg-black z-[99] flex flex-col justify-center items-center transition-all duration-1000;
 
 	max-height: 0;
-	// overflow: hidden;
-
-	// &_active {
-	// 	max-height: 100%;
-	// }
 
 	&__close {
 		@apply absolute top-[0.875rem] right-[0.875rem] z-[2] w-[3rem] h-[3rem] text-[#989898] cursor-pointer;
@@ -18,12 +13,7 @@
 
 	&__shadow {
 		@apply w-full h-screen absolute top-0 bg-[#AE2524] left-0 z-[3];
-		// background: linear-gradient(
-		// 	180deg,
-		// 	rgb(217, 217, 217),
-		// 	rgb(160, 160, 160) 100%
-		// );
-		//
+
 		&_small {
 			@apply bg-opacity-40 z-[-1];
 		}

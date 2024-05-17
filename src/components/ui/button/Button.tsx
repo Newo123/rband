@@ -13,13 +13,6 @@ export function Button({
 }: PropsWithChildren<HTMLAttributes<HTMLButtonElement | HTMLLinkElement>>) {
 	const buttonRef = useRef<any>()
 	const followerRef = useRef<any>()
-	const handleLeave = (e: any) => {
-		gsap.to(followerRef.current, {
-			duration: 0,
-			transform: 'none',
-			scale: 0
-		})
-	}
 
 	useGSAP(
 		() => {
@@ -28,27 +21,34 @@ export function Button({
 				type: 'pointer',
 				onMove: self => {
 					gsap.to(followerRef.current, {
-						duration: 0.2,
+						duration: 0,
 						delay: 0,
 						translateX:
 							// @ts-ignore
 							(self.event.layerX / buttonRef.current.clientWidth) * 100 + '%',
 						translateY:
 							// @ts-ignore
-							(self.event.layerY / buttonRef.current.clientHeight) * 100 + '%',
+							(self.event.layerY / buttonRef.current.clientHeight) * 100 + '%'
+						// scale: 1
+					})
+				},
+				onHover: self => {
+					gsap.to(followerRef.current, {
+						duration: 0.3,
+						delay: 0,
 						scale: 1
 					})
 				},
 				onHoverEnd: self => {
 					gsap.to(followerRef.current, {
-						duration: 0.2,
+						duration: 0.3,
 						delay: 0,
 						scale: 0
 					})
 				}
 			})
 		},
-		{ scope: buttonRef }
+		{ scope: buttonRef, dependencies: [] }
 	)
 	return (
 		<button

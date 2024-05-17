@@ -61,6 +61,9 @@ export default function RootLayout({ children, params }: Readonly<Props>) {
 					<Modal id='country'>
 						<Localization />
 					</Modal>
+					<Modal id='city'>
+						<Localization />
+					</Modal>
 				</Providers>
 			</body>
 		</html>

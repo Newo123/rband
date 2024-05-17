@@ -70,7 +70,6 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 						})
 				},
 				onLeaveBack: self => {
-					console.log('onLeaveBack')
 					gsap
 						.timeline()
 						.to(childRef.current, {
