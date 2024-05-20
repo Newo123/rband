@@ -1,5 +1,5 @@
 .reputation {
-	@apply pb-[2.5rem];
+	@apply pb-[2.5rem] overflow-x-hidden;
 
 	@screen sm {
 		@apply pb-[3.75rem];

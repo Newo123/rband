@@ -6,8 +6,6 @@ import { ReactNode } from 'react'
 
 import { Footer } from '@/components/footer/Footer'
 import { Header } from '@/components/header/Header'
-import { Localization } from '@/components/localization/Localization'
-import { Modal } from '@/components/ui/modal/Modal'
 
 import { Providers } from '@/providers/providers'
 
@@ -50,20 +48,15 @@ type Props = {
 export default function RootLayout({ children, params }: Readonly<Props>) {
 	return (
 		<html
-			lang={params.lang}
+			lang={params.lang ? params.lang : 'ru'}
 			className={cn(montserrat.className, montserrat.variable, intro.variable)}
+			suppressHydrationWarning={true}
 		>
-			<body>
+			<body suppressHydrationWarning={true}>
 				<Providers>
 					<Header />
 					<main>{children}</main>
 					<Footer />
-					<Modal id='country'>
-						<Localization />
-					</Modal>
-					<Modal id='city'>
-						<Localization />
-					</Modal>
 				</Providers>
 			</body>
 		</html>

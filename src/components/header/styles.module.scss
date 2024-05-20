@@ -6,15 +6,13 @@
 	}
 
 	&_fixed {
-		@apply fixed -top-1/4 bg-white;
+		@apply fixed -top-1/4 bg-black;
 	}
 
 	&_show {
 		@apply top-0 transition-all duration-300;
 	}
-	&_fixed {
-		box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.1);
-	}
+
 	&_transition {
 		@apply transition-all duration-300;
 	}
@@ -27,7 +25,11 @@
 		@apply flex items-center;
 	}
 	&__left {
-		@apply gap-[3.125rem] text-white;
+		@apply gap-[2.688rem] text-white;
+
+		@screen xl {
+			@apply gap-[3.125rem];
+		}
 	}
 
 	&__logo {
@@ -40,7 +42,7 @@
 	&__nav {
 		@apply h-full fixed top-0 right-0 translate-x-full;
 
-		@screen xl {
+		@screen lg {
 			@apply static;
 			transform: initial;
 		}
@@ -57,9 +59,7 @@
 		@media (hover: hover) {
 			@apply hover:before:max-w-full;
 		}
-		// &::after {
-		// 	@apply content-[''];
-		// }
+
 		&::before {
 			@apply content-[''] absolute bottom-[-0.125rem] left-0 w-full h-[0.063rem] max-w-0 bg-white transition-all duration-500;
 			mix-blend-mode: difference;
@@ -72,7 +72,7 @@
 		@screen xs {
 			@apply w-[2.25rem] h-[2.25rem];
 		}
-		@screen xl {
+		@screen lg {
 			@apply hidden;
 		}
 
@@ -82,15 +82,20 @@
 	}
 
 	&__right {
-		@apply hidden items-center gap-[1.75rem] text-white;
+		@apply flex items-center gap-[1.75rem] text-white;
 
 		@screen xl {
-			@apply flex;
+			@apply gap-[2.125rem];
+		}
+		@screen 2xl {
+			@apply gap-[1.75rem];
 		}
 	}
 
 	&__getLangs {
-		@apply mr-[1.625rem];
+		@screen 2xl {
+			@apply mr-[1.625rem];
+		}
 	}
 	&__getLangs,
 	&__getCity,
@@ -119,7 +124,6 @@
 		@apply left-0 w-full h-full before:right-0 before:left-[initial] before:scale-0 text-inherit;
 	}
 	&__getProjectMain {
-		// @apply pl-[2.813rem];
 		@apply text-nowrap;
 	}
 
@@ -139,28 +143,5 @@
 		&::after {
 			@apply content-[''] absolute left-[-0.5rem] top-1/2 -translate-y-1/2 w-[0.25rem] h-[0.25rem] rounded-full bg-white transition-all duration-300;
 		}
-	}
-	&_fixed &__getProject {
-		@apply border-black;
-	}
-	&_fixed &__getCity {
-		&::after {
-			@apply bg-black;
-		}
-	}
-	&_fixed &__left,
-	&_fixed &__right {
-		@apply text-black;
-	}
-
-	&_fixed &__getProject_hover {
-		@apply border-[#9F231C];
-	}
-
-	&_fixed &__getProject_hover &__getProjectHover {
-		@apply text-white;
-	}
-	&_fixed &__burger {
-		@apply text-black;
 	}
 }

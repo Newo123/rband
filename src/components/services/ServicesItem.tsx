@@ -46,10 +46,6 @@ export function ServicesItem({
 					заказать
 					<span>проект</span>
 				</Button>
-				{/* <button className={classes.services__itemActionsButton}>
-					заказать
-					<span>проект</span>
-				</button> */}
 				<Link
 					href={href}
 					className={classes.services__itemActionsLink}

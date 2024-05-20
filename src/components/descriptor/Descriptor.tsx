@@ -1,4 +1,3 @@
-import DescriptorImg from '/public/descriptor.jpg'
 import { useGSAP } from '@gsap/react'
 import cn from 'clsx'
 import gsap from 'gsap'
@@ -115,9 +114,10 @@ export function Descriptor() {
 					>
 						<div className={classes.descriptor__actionsImage}>
 							<Image
-								src={DescriptorImg}
+								src='/descriptor.jpeg'
 								alt='descriptor'
 								sizes='100vw'
+								fill
 							/>
 						</div>
 						<div className={classes.descriptor__actionsVideo}>
@@ -129,7 +129,6 @@ export function Descriptor() {
 								loop
 								playsInline
 								muted
-								poster={DescriptorImg.src}
 							>
 								<source
 									src='/descriptor.mp4'

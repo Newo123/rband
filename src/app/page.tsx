@@ -6,7 +6,7 @@ type Props = {
 
 export const revalidate = 3600
 
-export default function Home({ params }: Props) {
+export default async function Home({ params }: Props) {
 	return (
 		<div>
 			{/* <Image

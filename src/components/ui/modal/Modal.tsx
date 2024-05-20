@@ -4,39 +4,28 @@ import { useGSAP } from '@gsap/react'
 import { Icon } from '@iconify/react'
 import cn from 'clsx'
 import gsap from 'gsap/all'
-import {
-	HTMLAttributes,
-	PropsWithChildren,
-	useEffect,
-	useRef,
-	useState
-} from 'react'
-
-import { useModal } from '@/store/modal.store'
+import { HTMLAttributes, PropsWithChildren, useRef } from 'react'
 
 import classes from './styles.module.scss'
 
-export function Modal({
+const Modal = ({
 	className,
 	children,
-	id,
+	isOpen,
+	setIsOpen,
 	...rest
-}: PropsWithChildren<HTMLAttributes<HTMLElement>> & { id: string }) {
-	const { modals, setActiveModal } = useModal()
+}: PropsWithChildren<HTMLAttributes<HTMLElement>> & {
+	isOpen: boolean
+	setIsOpen: (value: boolean) => void
+}) => {
 	const modalRef = useRef(null)
 	const shadowRef = useRef(null)
 	const shadowSmallRef = useRef(null)
-	const [modal, setModal] = useState(modals.find(m => m.id === id))
-
-	useEffect(() => {
-		setModal(modals.find(m => m.id === id))
-	}, [modals])
 
 	useGSAP(
 		() => {
 			const timeline = gsap.timeline()
-
-			if (modal?.isOpen) {
+			if (isOpen) {
 				timeline
 					.to(shadowSmallRef.current, {
 						translateY: '-100%',
@@ -52,7 +41,7 @@ export function Modal({
 						duration: 0.3,
 						delay: 0.6
 					})
-			} else if (!modal?.isOpen) {
+			} else if (!isOpen) {
 				timeline
 					.to(shadowRef.current, {
 						translateY: 0,
@@ -69,16 +58,12 @@ export function Modal({
 					})
 			}
 		},
-		{ scope: modalRef, dependencies: [modals] }
+		{ scope: modalRef, dependencies: [isOpen] }
 	)
 
 	return (
 		<div
-			className={cn(
-				classes.modal,
-				modal?.isOpen && classes.modal_active,
-				className
-			)}
+			className={cn(classes.modal, className)}
 			ref={modalRef}
 			{...rest}
 		>
@@ -92,7 +77,7 @@ export function Modal({
 			></div>
 			<button
 				className={classes.modal__close}
-				onClick={() => setActiveModal(modal?.id!, false)}
+				onClick={() => setIsOpen(false)}
 			>
 				<Icon icon='iconamoon:close-thin' />
 			</button>
@@ -100,3 +85,5 @@ export function Modal({
 		</div>
 	)
 }
+
+export default Modal

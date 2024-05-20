@@ -124,7 +124,7 @@
 		}
 	}
 	&__listText {
-		@apply text-[0.875rem] font-medium leading-150 max-h-0 overflow-hidden invisible opacity-0;
+		@apply text-[0.875rem] font-medium leading-150 max-h-0 overflow-hidden invisible opacity-0 transition-opacity duration-500;
 		@screen sm {
 			@apply text-[1rem];
 		}

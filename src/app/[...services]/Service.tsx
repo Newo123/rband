@@ -37,6 +37,7 @@ const partners = [
 		image: '/partner6.png'
 	}
 ]
+
 export function Service() {
 	return (
 		<>

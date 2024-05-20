@@ -3,7 +3,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { PropsWithChildren, useState } from 'react'
 
-import SmoothScrollProvider from './SmoothScrollProvider'
+import ModalProvider from './Modal.provider'
+import SmoothScrollProvider from './SmoothScroll.provider'
 
 export function Providers({ children }: PropsWithChildren) {
 	const [client] = useState(
@@ -17,7 +18,9 @@ export function Providers({ children }: PropsWithChildren) {
 	)
 	return (
 		<QueryClientProvider client={client}>
-			<SmoothScrollProvider>{children}</SmoothScrollProvider>
+			<SmoothScrollProvider>
+				<ModalProvider>{children}</ModalProvider>
+			</SmoothScrollProvider>
 			{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 		</QueryClientProvider>
 	)

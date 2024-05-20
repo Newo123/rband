@@ -3,20 +3,19 @@
 import { Icon } from '@iconify/react'
 import cn from 'clsx'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-
-import { useModal } from '@/store/modal.store'
+import { useContext, useEffect, useState } from 'react'
 
 import { useScroll } from '@/hooks/useScroll'
 
+import { Localization } from '../localization/Localization'
 import { Container } from '../ui/container/Container'
 
 import { HeaderNav } from './HeaderNav'
 import { menu } from './menu.data'
 import classes from './styles.module.scss'
+import { ModalContext } from '@/contexts/Modal.context'
 
 export function Header() {
-	const { setActiveModal } = useModal()
 	const [isFixed, setIsFixed] = useState(false)
 	const [isLoaded, setIsLoaded] = useState(false)
 	const [isTranslate, setIsTranslate] = useState(true)
@@ -24,6 +23,8 @@ export function Header() {
 	const [isTransition, setIsTransition] = useState(false)
 	const [isHover, setIsHover] = useState(false)
 	const { scroll, setScroll } = useScroll()
+
+	const { open } = useContext(ModalContext)
 
 	let currentScroll = 0
 	const handleScroll = (e: Event) => {
@@ -89,21 +90,21 @@ export function Header() {
 						className={classes.header__logo}
 						href='/'
 					>
-						rband
+						RBAND
 					</Link>
 					{menu.length > 0 && <HeaderNav />}
 				</div>
 				<div className={classes.header__right}>
 					<button
 						className={classes.header__getLangs}
-						onClick={() => setActiveModal('country', true)}
+						onClick={() => open(<Localization />)}
 					>
 						RU
 					</button>
 
 					<button
 						className={classes.header__getCity}
-						onClick={() => setActiveModal('city', true)}
+						onClick={() => open(<Localization />)}
 					>
 						Екатеринбург
 					</button>
@@ -120,9 +121,9 @@ export function Header() {
 							Начать проект
 						</span>
 					</button>
-				</div>
-				<div className={classes.header__burger}>
-					<Icon icon='clarity:menu-line' />
+					<div className={classes.header__burger}>
+						<Icon icon='clarity:menu-line' />
+					</div>
 				</div>
 			</Container>
 		</header>
