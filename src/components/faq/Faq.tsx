@@ -14,11 +14,11 @@ export function Faq() {
 	return (
 		<section className={classes.faq}>
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.faq__container}
 			>
 				<Heading
-					tag='h2'
+					tag='h5'
 					className={cn('site-title-2', classes.faq__title)}
 				>
 					{faq.title}

@@ -10,7 +10,7 @@ export function PrinciplesContent({ title, items }: TypePrinciplesContent) {
 	return (
 		<div className={classes.principles__content}>
 			<Heading
-				tag='h2'
+				tag='h5'
 				className={cn(classes.principles__title, 'site-title-2')}
 			>
 				{title}

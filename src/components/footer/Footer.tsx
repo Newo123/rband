@@ -40,7 +40,7 @@ export function Footer() {
 	return (
 		<footer className={classes.footer}>
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.footer__container}
 			>
 				<div className={classes.footer__company}>

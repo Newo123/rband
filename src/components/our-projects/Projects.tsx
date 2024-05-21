@@ -27,7 +27,7 @@ export function Projects() {
 	return (
 		<section className={classes.ourProjects}>
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.ourProjects__container}
 			>
 				<ProjectsHeader />

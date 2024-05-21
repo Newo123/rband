@@ -1,6 +1,6 @@
 export const menu = [
 	{
-		href: '#',
+		href: '/asdas',
 		title: 'Услуги'
 	},
 	{
@@ -20,7 +20,7 @@ export const menu = [
 		title: 'Отзывы'
 	},
 	{
-		href: '#',
+		href: '/contacts',
 		title: 'Контакты'
 	}
 ]

@@ -94,7 +94,7 @@ export function Reputation() {
 				</TextWrap>
 			)}
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.reputation__container}
 			>
 				{reputations.length > 0 && (

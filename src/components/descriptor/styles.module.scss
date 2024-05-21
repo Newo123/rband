@@ -97,7 +97,7 @@
 	}
 
 	&__contentTitle {
-		@apply text-white;
+		@apply text-white flex flex-col-reverse gap-[0.875rem];
 	}
 
 	&__contentText {

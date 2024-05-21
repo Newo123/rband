@@ -46,12 +46,12 @@
 		}
 	}
 	&__submit {
-		@apply text-[0.75rem] font-bold leading-[2.167em] py-[0.5rem] px-[1.875rem] rounded-[0.75rem] bg-white text-black;
+		// @apply text-[0.75rem] font-bold leading-[2.167em] py-[0.5rem] px-[1.875rem] rounded-[0.75rem] bg-white text-black;
 
-		@apply mt-[0.25rem];
+		// @apply mt-[0.25rem];
 	}
 
-	& .textfield {
+	&__input {
 		@apply mt-[0.625rem] first:mt-0;
 
 		@screen xs {
@@ -68,24 +68,5 @@
 		@screen 2xl {
 			@apply ml-[0.75rem] first:ml-0;
 		}
-	}
-}
-
-.textfield {
-	@apply flex flex-col relative h-[1.875rem] w-full;
-
-	&__label {
-		@apply absolute top-0 left-0 z-[0] transition-all text-[0.75rem] duration-200 font-medium leading-110 text-[#E5E5E5];
-		@screen xl {
-			@apply text-[0.875rem];
-		}
-	}
-
-	&__input {
-		@apply bg-transparent outline-none relative border-b border-b-white w-full h-full;
-	}
-
-	&_focused &__label {
-		@apply top-0 -translate-y-full text-[0.625rem];
 	}
 }

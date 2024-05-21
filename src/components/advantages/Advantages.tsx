@@ -8,7 +8,7 @@ export function Advantages() {
 	return (
 		<section className={classes.advantages}>
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.advantages__container}
 			>
 				<AdvantagesImages />

@@ -51,7 +51,7 @@ export function AdvantagesItem({
 			>
 				<div
 					className={classes.advantages__itemImage}
-					style={{ aspectRatio: '1.47' }}
+					style={{ aspectRatio: '1.4' }}
 				>
 					<Image
 						src={image}

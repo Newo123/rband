@@ -1,21 +1,28 @@
+'use client'
+
 import cn from 'clsx'
 import { HTMLAttributes, PropsWithChildren, useState } from 'react'
 
-import classes from './styles.module.scss'
+import classes from './input.module.scss'
 
 type TypeInput = PropsWithChildren<HTMLAttributes<HTMLInputElement>> & {
 	placeholder: string
 }
 
-export function TextField({ placeholder, ...rest }: TypeInput) {
+export function Input({ placeholder, className, ...rest }: TypeInput) {
 	const [isFocused, setIsFocused] = useState(false)
 	return (
 		<div
-			className={cn(classes.textfield, isFocused && classes.textfield_focused)}
+			className={cn(
+				classes.input,
+				isFocused && classes.input_focused,
+				className
+			)}
+			{...rest}
 		>
 			<label
 				htmlFor={rest.id}
-				className={classes.textfield__label}
+				className={classes.input__label}
 			>
 				{placeholder}
 			</label>
@@ -23,7 +30,7 @@ export function TextField({ placeholder, ...rest }: TypeInput) {
 				{...rest}
 				onFocus={() => setIsFocused(true)}
 				onBlur={e => !e.target.value && setIsFocused(!isFocused)}
-				className={classes.textfield__input}
+				className={classes.input__input}
 			/>
 		</div>
 	)

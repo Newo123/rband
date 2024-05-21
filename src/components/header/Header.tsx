@@ -3,7 +3,10 @@
 import { Icon } from '@iconify/react'
 import cn from 'clsx'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useContext, useEffect, useState } from 'react'
+
+import { headerBlack } from '@/constants/headerBlack.constants'
 
 import { useScroll } from '@/hooks/useScroll'
 
@@ -23,6 +26,7 @@ export function Header() {
 	const [isTransition, setIsTransition] = useState(false)
 	const [isHover, setIsHover] = useState(false)
 	const { scroll, setScroll } = useScroll()
+	const pathname = usePathname()
 
 	const { open } = useContext(ModalContext)
 
@@ -70,7 +74,8 @@ export function Header() {
 				classes.header,
 				isFixed ? classes.header_fixed : '',
 				isShow ? classes.header_show : '',
-				isTransition ? classes.header_transition : ''
+				isTransition ? classes.header_transition : '',
+				headerBlack.includes(pathname) || isFixed ? classes.header_black : ''
 			)}
 			onTransitionEnd={() => setIsTranslate(false)}
 			style={
@@ -82,7 +87,7 @@ export function Header() {
 			}
 		>
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.header__container}
 			>
 				<div className={classes.header__left}>

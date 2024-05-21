@@ -13,7 +13,7 @@ export function Services() {
 	return (
 		<section className={classes.services}>
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.services__container}
 			>
 				<Heading

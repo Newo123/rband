@@ -7,6 +7,8 @@ import { HTMLAttributes, PropsWithChildren, useRef } from 'react'
 
 import classes from './Button.module.scss'
 
+gsap.registerPlugin(Observer)
+
 export function Button({
 	className,
 	children
@@ -19,9 +21,7 @@ export function Button({
 			Observer.create({
 				target: buttonRef.current,
 				type: 'pointer',
-				onDrag: (self: Observer) => {
-					console.log(self)
-				},
+
 				onMove: (self: Observer) => {
 					gsap.to(followerRef.current, {
 						duration: 0,

@@ -5,8 +5,12 @@
 		@apply h-[5.313rem];
 	}
 
+	&_black {
+		@apply bg-black;
+	}
+
 	&_fixed {
-		@apply fixed -top-1/4 bg-black;
+		@apply fixed -top-1/4;
 	}
 
 	&_show {
@@ -42,7 +46,7 @@
 	&__nav {
 		@apply h-full fixed top-0 right-0 translate-x-full;
 
-		@screen lg {
+		@screen xl {
 			@apply static;
 			transform: initial;
 		}
@@ -72,7 +76,7 @@
 		@screen xs {
 			@apply w-[2.25rem] h-[2.25rem];
 		}
-		@screen lg {
+		@screen xl {
 			@apply hidden;
 		}
 
@@ -82,7 +86,11 @@
 	}
 
 	&__right {
-		@apply flex items-center gap-[1.75rem] text-white;
+		@apply flex items-center gap-[2.25rem] text-white;
+
+		@screen xs {
+			@apply gap-[3.125rem];
+		}
 
 		@screen xl {
 			@apply gap-[2.125rem];
@@ -100,14 +108,22 @@
 	&__getLangs,
 	&__getCity,
 	&__getProject {
-		@apply font-semibold leading-140 text-[0.875rem]  tracking-[0.05em] transition-all duration-300;
+		@apply font-semibold leading-140 text-[1rem]  tracking-[0.05em] transition-all duration-300;
+
+		@screen lg {
+			@apply text-[0.875rem];
+		}
 	}
 
 	&__getProject {
-		@apply text-[0.625rem] uppercase flex items-center gap-[0.75rem] border border-white rounded-[1.375rem] relative w-[9.75rem] h-[2.25rem] overflow-hidden transition-all duration-500;
+		@apply text-[0.625rem] uppercase hidden items-center gap-[0.75rem] border border-white rounded-[1.375rem] relative w-[9.75rem] h-[2.25rem] overflow-hidden transition-all duration-500;
 
 		&_hover {
 			@apply border-[#9F231C];
+		}
+
+		@screen xl {
+			@apply flex;
 		}
 	}
 	&__getProjectHover {
@@ -139,9 +155,13 @@
 		}
 	}
 	&__getCity {
-		@apply ml-[0.5rem];
+		@apply ml-[0.5rem] hidden;
 		&::after {
 			@apply content-[''] absolute left-[-0.5rem] top-1/2 -translate-y-1/2 w-[0.25rem] h-[0.25rem] rounded-full bg-white transition-all duration-300;
+		}
+
+		@screen xl {
+			@apply block;
 		}
 	}
 }

@@ -101,7 +101,7 @@ export function Descriptor() {
 			ref={descriptorRef}
 		>
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.descriptor__container}
 			>
 				<div
@@ -152,11 +152,13 @@ export function Descriptor() {
 						className={classes.descriptor__content}
 						ref={contentRef}
 					>
-						<p className={classes.descriptor__contentRegion}>В екатеринбурге</p>
 						<h1
 							className={cn('site-title-1', classes.descriptor__contentTitle)}
 						>
 							СОЗДАЕМ сайты для бизнеса
+							<span className={classes.descriptor__contentRegion}>
+								В екатеринбурге
+							</span>
 						</h1>
 						<p className={classes.descriptor__contentText}>
 							создадим сайт для бизнеса с презентацией услуг и целевыми

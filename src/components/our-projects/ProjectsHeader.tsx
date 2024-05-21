@@ -26,7 +26,7 @@ export function ProjectsHeader() {
 	return (
 		<div className={classes.ourProjects__header}>
 			<Heading
-				tag='h2'
+				tag='h4'
 				className={cn('site-title-2', classes.ourProjects__title)}
 			>
 				Наши проекты

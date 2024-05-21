@@ -7,7 +7,7 @@ $containers: (
 		lg 960px 0.75rem,
 		xl 1140px 0.75rem,
 		2xl 1320px 0.75rem,
-		3xl 82.5rem 0.75rem,
+		3xl 82.5rem 0.75rem
 	),
 	md: (
 		default 100% 1rem,
@@ -17,7 +17,7 @@ $containers: (
 		lg 960px 0.75rem,
 		xl 1140px 0.75rem,
 		2xl 1320px 0.75rem,
-		3xl 82.5rem 0.75rem,
+		3xl 82.5rem 0.75rem
 	),
 	lg: (
 		default 100% 1rem,
@@ -27,17 +27,17 @@ $containers: (
 		lg 960px 0.75rem,
 		xl 1140px 0.75rem,
 		2xl 1320px 0.75rem,
-		3xl 82.5rem 0.75rem,
+		3xl 82.5rem 0.75rem
 	),
 	xl: (
 		default 100% 1rem,
 		xs 100% 1.5rem,
 		sm 100% 1.5rem,
 		md 100% 1.5rem,
-		lg 100% 0.75rem,
+		lg 100% 1.5rem,
 		xl 1140px 0.75rem,
 		2xl 1320px 0.75rem,
-		3xl 82.5rem 0.75rem,
+		3xl 82.5rem 0.75rem
 	),
 	xxl: (
 		default 100% 1rem,
@@ -47,7 +47,7 @@ $containers: (
 		lg 100% 0.75rem,
 		xl 100% 0.75rem,
 		2xl 1320px 0.75rem,
-		3xl 82.5rem 0.75rem,
+		3xl 82.5rem 0.75rem
 	),
 	full: (
 		default 100% 1rem,
@@ -57,8 +57,8 @@ $containers: (
 		lg 100% 0.75rem,
 		xl 100% 0.75rem,
 		2xl 100% 0.75rem,
-		3xl 100% 0.75rem,
-	),
+		3xl 100% 0.75rem
+	)
 );
 
 // Контейнеры

@@ -41,7 +41,7 @@ export function Stages() {
 			)}
 
 			<Container
-				variant='lg'
+				variant='xl'
 				className={classes.stages__container}
 			>
 				<div className={classes.stages__box}>

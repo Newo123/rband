@@ -48,7 +48,7 @@ export function Partners(partners: Array<{ href: string; image: string }>) {
 				}
 			>
 				<Container
-					variant='lg'
+					variant='xl'
 					className={classes.partners__container}
 				>
 					{Object.values(partners)?.map(partner => (
