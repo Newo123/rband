@@ -10,7 +10,7 @@ export type TypeProps = {
 	type?: 'radio' | 'checkbox'
 }
 
-export const Switcher = forwardRef(
+export const SwitcherComponent = forwardRef(
 	({ id, label, name, type = 'radio', isChecked }: TypeProps) => {
 		return (
 			<label
@@ -36,3 +36,5 @@ export const Switcher = forwardRef(
 		)
 	}
 )
+SwitcherComponent.displayName = 'switcher'
+export const Switcher = SwitcherComponent

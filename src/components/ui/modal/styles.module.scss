@@ -12,8 +12,8 @@
 	}
 
 	&__shadow {
-		@apply w-full h-screen absolute top-0 bg-[#AE2524] left-0 z-[3];
-
+		@apply w-full h-screen absolute top-0 bg-[#000] left-0 z-[3];
+		// AE2524
 		&_small {
 			@apply bg-opacity-40 z-[-1];
 		}
