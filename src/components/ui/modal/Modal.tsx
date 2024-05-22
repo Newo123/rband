@@ -30,7 +30,10 @@ const Modal = ({
 				timeline
 					.to(shadowSmallRef.current, {
 						translateY: '-100%',
-						duration: 0.4
+						duration: 0.4,
+						onStart: () => {
+							document.body.style.overflowY = 'hidden'
+						}
 					})
 					.to(modalRef.current, {
 						maxHeight: '100%',
@@ -63,7 +66,10 @@ const Modal = ({
 					})
 					.to(shadowSmallRef.current, {
 						translateY: 0,
-						duration: 0.4
+						duration: 0.4,
+						onComplete: () => {
+							document.body.style.overflowY = 'scroll'
+						}
 					})
 			}
 		},
