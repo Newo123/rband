@@ -1,21 +1,15 @@
 import { forwardRef } from 'react'
 
 import classes from './switcher.module.scss'
-
-export type TypeProps = {
-	name: string
-	id: string
-	label: string
-	isChecked: boolean
-	type?: 'radio' | 'checkbox'
-}
+import { TypeSwitcher } from './switcher.types'
 
 export const SwitcherComponent = forwardRef(
-	({ id, label, name, type = 'radio', isChecked }: TypeProps) => {
+	({ id, label, name, type = 'radio', isChecked }: TypeSwitcher, ref: any) => {
 		return (
 			<label
 				htmlFor={id}
 				className={classes.switcher}
+				ref={ref}
 			>
 				<div className={classes.switcher__container}>
 					<div className={classes.switcher__state}>

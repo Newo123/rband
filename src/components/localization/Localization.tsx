@@ -1,122 +1,20 @@
+import cn from 'clsx'
 import Link from 'next/link'
 
+import { ILocalization } from './localization.types'
 import classes from './styles.module.scss'
 
-const locales = {
-	country: [
-		{
-			title: 'Русский',
-			href: '/'
-		},
-		{
-			title: 'English',
-			href: '/'
-		},
-		{
-			title: 'Srpski',
-			href: '/'
-		}
-	],
-	regions: [
-		{
-			country: 'Srbija',
-			href: '/',
-			cities: [
-				{
-					title: 'Beograd',
-					href: '/'
-				},
-				{
-					title: 'Novi Sad',
-					href: '/'
-				},
-				{
-					title: 'Niš',
-					href: '/'
-				},
-				{
-					title: 'Kragujevac',
-					href: '/'
-				},
-				{
-					title: 'Subotica',
-					href: '/'
-				}
-			]
-		},
-		{
-			country: 'Montenegro',
-			href: '/',
-			cities: [
-				{
-					title: 'Bar',
-					href: '/'
-				},
-				{
-					title: 'Podgorica',
-					href: '/'
-				},
-				{
-					title: 'Tivat',
-					href: '/'
-				},
-				{
-					title: 'Budva',
-					href: '/'
-				},
-				{
-					title: 'Kotor',
-					href: '/'
-				},
-				{
-					title: 'Herceg Novi',
-					href: '/'
-				},
-				{
-					title: 'Nikšić',
-					href: '/'
-				}
-			]
-		},
-		{
-			country: 'Hrvatska',
-			href: '/',
-			cities: [
-				{
-					title: 'Zagreb',
-					href: '/'
-				},
-				{
-					title: 'Dubrovnik',
-					href: '/'
-				},
-				{
-					title: 'Split',
-					href: '/'
-				},
-				{
-					title: 'Rijeka',
-					href: '/'
-				},
-				{
-					title: 'Zadar',
-					href: '/'
-				}
-			]
-		}
-	]
-}
-
-export function Localization() {
+export function Localization({ regions, country }: ILocalization) {
+	console.log(regions, country)
 	return (
 		<div className={classes.localization}>
 			<div className={classes.localization__container}>
-				{locales.regions.length > 0 && (
+				{regions && regions.length > 0 && (
 					<>
 						<div className={classes.localization__label}>Выберите город</div>
 						<div className={classes.localization__locales}>
-							{locales.regions.length &&
-								locales.regions.map((locale, index) => {
+							{regions.length &&
+								regions.map((locale, index) => {
 									return (
 										<div
 											className={classes.localization__localesItem}
@@ -153,14 +51,14 @@ export function Localization() {
 					</>
 				)}
 
-				{/* {locales.country.length > 0 && (
+				{country && country.length > 0 && (
 					<div
 						className={cn(
 							classes.localization__locales,
 							classes.localization__locales_centered
 						)}
 					>
-						{locales.country.map(count => (
+						{country.map(count => (
 							<div
 								className={classes.localization__localesItem}
 								key={count.title}
@@ -174,7 +72,7 @@ export function Localization() {
 							</div>
 						))}
 					</div>
-				)} */}
+				)}
 			</div>
 		</div>
 	)

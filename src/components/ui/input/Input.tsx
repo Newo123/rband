@@ -1,13 +1,10 @@
 'use client'
 
 import cn from 'clsx'
-import { HTMLAttributes, PropsWithChildren, useState } from 'react'
+import { useState } from 'react'
 
 import classes from './input.module.scss'
-
-type TypeInput = PropsWithChildren<HTMLAttributes<HTMLInputElement>> & {
-	placeholder: string
-}
+import { TypeInput } from './input.types'
 
 export function Input({ placeholder, className, ...rest }: TypeInput) {
 	const [isFocused, setIsFocused] = useState(false)
@@ -18,7 +15,6 @@ export function Input({ placeholder, className, ...rest }: TypeInput) {
 				isFocused && classes.input_focused,
 				className
 			)}
-			{...rest}
 		>
 			<label
 				htmlFor={rest.id}

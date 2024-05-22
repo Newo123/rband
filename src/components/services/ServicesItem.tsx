@@ -2,13 +2,60 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 
 import { TypeService } from '@/store/services.store'
 
+import { Contacts } from '../contacts/Contacts'
 import { Button } from '../ui/button/Button'
+import { TypeInput } from '../ui/input/input.types'
+import { TypeSwitcher } from '../ui/switcher/switcher.types'
 
 import classes from './styles.module.scss'
+import { ModalContext } from '@/contexts/Modal.context'
+
+const switchers: Array<TypeSwitcher> = [
+	{
+		id: 'web-service',
+		label: 'Сайт или web-сервис',
+		name: 'type-project',
+		isChecked: true
+	},
+	{
+		id: 'internet-promotion',
+		label: 'Интернет-продвижение',
+		name: 'type-project',
+		isChecked: false
+	},
+	{
+		id: 'Design-logo-or-branding',
+		label: 'Дизайн, лого или брендинг',
+		name: 'type-project',
+		isChecked: false
+	}
+]
+
+const inputs: Array<TypeInput> = [
+	{
+		placeholder: 'Имя *',
+		id: 'name',
+		name: 'name',
+		type: 'text'
+	},
+	{
+		placeholder: 'Телефон *',
+		id: 'phone',
+		name: 'phone',
+		type: 'phone'
+	}
+]
+
+export const call = {
+	title: 'Написать в RBAND',
+	text: 'Расскажите о своём проекте или предложении. Сообщение сразу попадёт к нужному специалисту или руководителю.',
+	switchers: switchers,
+	inputs: inputs
+}
 
 export function ServicesItem({
 	id,
@@ -18,6 +65,7 @@ export function ServicesItem({
 	image,
 	href
 }: TypeService) {
+	const { open } = useContext(ModalContext)
 	const itemRef = useRef(null)
 	useGSAP(() => {
 		gsap.to(itemRef.current, {
@@ -42,10 +90,22 @@ export function ServicesItem({
 			<p className={classes.services__itemPrice}>{price}</p>
 			<p className={classes.services__itemText}>{text}</p>
 			<div className={classes.services__itemActions}>
-				<Button className={classes.services__itemActionsButton}>
-					заказать
-					<span>проект</span>
-				</Button>
+				<div
+					onClick={() =>
+						open(
+							<Contacts
+								theme='dark'
+								callback={call}
+								contact={{ isAddress: false }}
+							/>
+						)
+					}
+				>
+					<Button className={classes.services__itemActionsButton}>
+						заказать
+						<span>проект</span>
+					</Button>
+				</div>
 				<Link
 					href={href}
 					className={classes.services__itemActionsLink}

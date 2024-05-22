@@ -10,11 +10,12 @@ import { headerBlack } from '@/constants/headerBlack.constants'
 
 import { useScroll } from '@/hooks/useScroll'
 
+import { Contacts } from '../contacts/Contacts'
 import { Localization } from '../localization/Localization'
 import { Container } from '../ui/container/Container'
 
 import { HeaderNav } from './HeaderNav'
-import { menu } from './menu.data'
+import { call, localesCountry, localesRegions, menu } from './menu.data'
 import classes from './styles.module.scss'
 import { ModalContext } from '@/contexts/Modal.context'
 
@@ -102,14 +103,14 @@ export function Header() {
 				<div className={classes.header__right}>
 					<button
 						className={classes.header__getLangs}
-						onClick={() => open(<Localization />)}
+						onClick={() => open(<Localization country={localesCountry} />)}
 					>
 						RU
 					</button>
 
 					<button
 						className={classes.header__getCity}
-						onClick={() => open(<Localization />)}
+						onClick={() => open(<Localization regions={localesRegions} />)}
 					>
 						Екатеринбург
 					</button>
@@ -120,6 +121,15 @@ export function Header() {
 						)}
 						onMouseEnter={() => setIsHover(true)}
 						onMouseLeave={() => setIsHover(false)}
+						onClick={() =>
+							open(
+								<Contacts
+									theme='dark'
+									contact={{ isAddress: false }}
+									callback={call}
+								/>
+							)
+						}
 					>
 						<span className={classes.header__getProjectHover}>Поехали!</span>
 						<span className={classes.header__getProjectMain}>

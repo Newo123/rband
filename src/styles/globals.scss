@@ -119,3 +119,30 @@ body {
 		background-size: 100% 0.063rem;
 	}
 }
+.dark {
+	@apply text-white my-[3.875rem];
+	margin: 3.875rem 0 !important ;
+
+	& label {
+		color: #fff !important;
+	}
+
+	input {
+		border-bottom: 0.125rem solid #fff !important;
+	}
+	button {
+		background-color: #fff !important;
+
+		color: #000 !important;
+	}
+	textarea {
+		background-color: #d9d9d929 !important;
+	}
+	span {
+		@apply before:bg-white;
+	}
+
+	svg {
+		color: #fff !important;
+	}
+}

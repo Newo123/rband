@@ -19,6 +19,7 @@ const Modal = ({
 	setIsOpen: (value: boolean) => void
 }) => {
 	const modalRef = useRef(null)
+	const modalContentRef = useRef(null)
 	const shadowRef = useRef(null)
 	const shadowSmallRef = useRef(null)
 
@@ -41,20 +42,28 @@ const Modal = ({
 						duration: 0.3,
 						delay: 0.6
 					})
+					.to(modalContentRef.current, {
+						opacity: 1,
+						overflowY: 'auto'
+					})
 			} else if (!isOpen) {
 				timeline
 					.to(shadowRef.current, {
 						translateY: 0,
 						duration: 0.3
 					})
+					.to(modalContentRef.current, {
+						opacity: 0,
+						overflowY: 'hidden'
+					})
 					.to(modalRef.current, {
 						maxHeight: 0,
+						delay: -0.5,
 						duration: 0.2
 					})
 					.to(shadowSmallRef.current, {
 						translateY: 0,
-						duration: 0.4,
-						delay: 0.4
+						duration: 0.4
 					})
 			}
 		},
@@ -81,7 +90,13 @@ const Modal = ({
 			>
 				<Icon icon='iconamoon:close-thin' />
 			</button>
-			{children}
+			<div
+				style={{ opacity: 0 }}
+				className='w-full h-full flex flex-col lg:items-center lg:justify-center'
+				ref={modalContentRef}
+			>
+				{children}
+			</div>
 		</div>
 	)
 }
