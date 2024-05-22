@@ -6,7 +6,7 @@ import { Container } from '@/components/ui/container/Container'
 
 import { ICallback } from '../callback/callback.types'
 
-import classes from './contacts.module.scss'
+import classes from './Contacts.module.scss'
 
 interface IContacts {
 	theme?: 'dark' | 'light'
@@ -24,13 +24,7 @@ export function Contacts({ theme = 'light', callback, contact }: IContacts) {
 				className={classes.contacts__container}
 			>
 				<Contact isAddress={contact.isAddress} />
-				<Callback
-					{...callback}
-					// switchers={switchers}
-					// inputs={inputs}
-					// title='Написать в RBAND'
-					// text='Расскажите о своём проекте или предложении. Сообщение сразу попадёт к нужному специалисту или руководителю.'
-				/>
+				<Callback {...callback} />
 			</Container>
 		</section>
 	)
