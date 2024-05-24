@@ -1,28 +1,11 @@
-import { useGSAP } from '@gsap/react'
 import cn from 'clsx'
-import gsap from 'gsap/all'
-import Link from 'next/link'
-import { useRef } from 'react'
 
 import Heading from '../ui/Heading/Heading'
+import { Reference } from '../ui/reference/Reference'
 
 import classes from './styles.module.scss'
 
 export function ProjectsHeader() {
-	const linkRef = useRef(null)
-	useGSAP(
-		() => {
-			gsap.to(linkRef.current, {
-				scrollTrigger: {
-					trigger: linkRef.current
-				},
-				translateY: 0,
-				opacity: 1,
-				delay: 0.3
-			})
-		},
-		{ scope: linkRef }
-	)
 	return (
 		<div className={classes.ourProjects__header}>
 			<Heading
@@ -31,17 +14,12 @@ export function ProjectsHeader() {
 			>
 				Наши проекты
 			</Heading>
-			<Link
+			<Reference
 				href='/'
 				className={classes.ourProjects__more}
-				ref={linkRef}
-				style={{
-					opacity: 0,
-					transform: 'translateY(100%)'
-				}}
 			>
 				Смотреть все кейсы
-			</Link>
+			</Reference>
 		</div>
 	)
 }

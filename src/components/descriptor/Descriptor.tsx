@@ -1,3 +1,5 @@
+'use client'
+
 import { useGSAP } from '@gsap/react'
 import cn from 'clsx'
 import gsap from 'gsap'

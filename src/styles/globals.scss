@@ -5,6 +5,9 @@
 @import 'functions';
 @import 'mixins';
 @import 'vars';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
 html {
 	font-size: $fzMain;
 
