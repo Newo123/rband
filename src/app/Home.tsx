@@ -1,6 +1,8 @@
 import { About } from '@/components/about/About'
 import { Descriptor } from '@/components/descriptor/Descriptor'
+import { Motivations } from '@/components/motivations/Motivations'
 import { Projects } from '@/components/our-projects/Projects'
+import { projects } from '@/components/our-projects/projects.data'
 import { Partners } from '@/components/partners/Partners'
 import { PageWrapper } from '@/components/ui/pageWrapper/PageWrapper'
 import { Useful } from '@/components/useful/Useful'
@@ -39,9 +41,10 @@ export function Home() {
 
 			<PageWrapper>
 				<Partners {...partners} />
-				<Projects />
+				<Projects {...projects} />
 				<About />
 				<Useful />
+				<Motivations />
 			</PageWrapper>
 		</>
 	)

@@ -14,10 +14,10 @@ import classes from './About.module.scss'
 
 const text = [
 	{
-		image: '/stages-first.svg'
+		image: '/repText1.svg'
 	},
 	{
-		image: '/stages-second.svg'
+		image: '/repText2.svg'
 	}
 ]
 

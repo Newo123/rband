@@ -1,5 +1,5 @@
 .useful {
-	@apply pt-[3.375rem] pb-[5.875] bg-[#E5E5E5];
+	@apply pt-[3.375rem] pb-[5.875rem] bg-[#E5E5E5] overflow-hidden;
 
 	@screen sm {
 		@apply pb-[6.563rem];

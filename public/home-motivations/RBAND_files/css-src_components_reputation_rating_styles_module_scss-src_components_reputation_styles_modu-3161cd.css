@@ -1,0 +1,519 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/text-wrap/styles.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.styles_textWrap__ncygv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.25rem;
+  overflow: hidden
+}
+@media (min-width: 476px) {
+  .styles_textWrap__ncygv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+  }
+}
+@media (min-width: 576px) {
+  .styles_textWrap__ncygv {
+    gap: 1.75rem
+  }
+}
+.styles_textWrap__item__NF4R7 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.4rem;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center
+}
+@media (min-width: 476px) {
+  .styles_textWrap__item__NF4R7 {
+    height: 3.125rem
+  }
+}
+@media (min-width: 576px) {
+  .styles_textWrap__item__NF4R7 {
+    height: 4.375rem
+  }
+}
+@media (min-width: 768px) {
+  .styles_textWrap__item__NF4R7 {
+    height: 5.375rem
+  }
+}
+@media (min-width: 992px) {
+  .styles_textWrap__item__NF4R7 {
+    height: 6.25rem
+  }
+}
+@media (min-width: 1200px) {
+  .styles_textWrap__item__NF4R7 {
+    height: 7.5rem
+  }
+}
+@media (min-width: 1400px) {
+  .styles_textWrap__item__NF4R7 {
+    height: 7.875rem
+  }
+}
+.styles_textWrap__item__NF4R7 img {
+  height: 100%;
+  width: auto
+}
+.styles_textWrap_reverse__n_Brp .styles_textWrap__item__NF4R7 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/reputation/styles.module.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.styles_reputation__cub5g {
+  overflow: hidden;
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 576px) {
+  .styles_reputation__cub5g {
+    padding-bottom: 3.75rem;
+  }
+}
+@media (min-width: 992px) {
+  .styles_reputation__cub5g {
+    padding-bottom: 4.375rem;
+  }
+}
+@media (min-width: 1200px) {
+  .styles_reputation__cub5g {
+    padding-bottom: 5.25rem;
+  }
+}
+.styles_reputation__sliderWrapper__F_lyE {
+  margin-top: 2.5rem;
+}
+@media (min-width: 576px) {
+  .styles_reputation__sliderWrapper__F_lyE {
+    margin-top: 1.875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .styles_reputation__sliderWrapper__F_lyE {
+    margin-top: 4.375rem;
+  }
+}
+.styles_reputation__slider__X5q8J {
+  overflow: visible;
+}
+.styles_reputation__sliderSlide__m_XDY {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2.5rem;
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+@media (min-width: 992px) {
+  .styles_reputation__sliderSlide__m_XDY {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1.875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .styles_reputation__sliderSlide__m_XDY {
+    gap: 3.625rem;
+  }
+}
+.styles_reputation__sliderSlideContent__BpN_v {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.styles_reputation__sliderSlideImg__uPjg_ {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 26.25rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+@media (min-width: 992px) {
+  .styles_reputation__sliderSlideImg__uPjg_ {
+    max-width: 100%;
+    -ms-flex-preferred-size: 30.75rem;
+        flex-basis: 30.75rem;
+  }
+}
+.styles_reputation__sliderSlideImg__uPjg_ img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  position: static !important;
+}
+.styles_reputation__sliderSlideTitle__1yw_D {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+@media (min-width: 1200px) {
+  .styles_reputation__sliderSlideTitle__1yw_D {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1400px) {
+  .styles_reputation__sliderSlideTitle__1yw_D {
+    font-size: 1.375rem;
+  }
+}
+.styles_reputation__sliderSlideText__cImPF {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+@media (min-width: 1200px) {
+  .styles_reputation__sliderSlideText__cImPF {
+    font-size: 1.125rem;
+  }
+}
+.styles_reputation__sliderSlideAuthor__P2e5W {
+  margin-top: 0.875rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 150%;
+}
+@media (min-width: 1200px) {
+  .styles_reputation__sliderSlideAuthor__P2e5W {
+    font-size: 1.125rem;
+  }
+}
+.styles_reputation__sliderSlideLinks__LMBBh {
+  position: relative;
+  margin-top: 1.5rem;
+  padding-left: 3.25rem;
+  vertical-align: middle;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+@media (min-width: 992px) {
+  .styles_reputation__sliderSlideLinks__LMBBh {
+    margin-top: 2.25rem;
+  }
+}
+.styles_reputation__sliderSlideLinks__LMBBh::before {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  display: inline-block;
+  height: 1.75rem;
+  width: 2.063rem;
+  --tw-translate-y: -50%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      -ms-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-content: "";
+  content: var(--tw-content);
+  background-image: url("/eyes.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-animation: styles_eye__BkDca 5s linear infinite;
+          animation: styles_eye__BkDca 5s linear infinite;
+  z-index: 11;
+}
+.styles_reputation__sliderSlideLinks__LMBBh::after {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  display: inline-block;
+  height: 1.75rem;
+  width: 2.063rem;
+  --tw-translate-y: -50%;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      -ms-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-content: "";
+  content: var(--tw-content);
+  background-image: url("/eyes.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: 10;
+}
+.styles_reputation__sliderSlideLinks__LMBBh a {
+  position: relative;
+  --tw-text-opacity: 1;
+  color: rgb(174 37 36 / var(--tw-text-opacity));
+}
+.styles_reputation__sliderSlideLinks__LMBBh a::before {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 0.063rem;
+  width: 100%;
+  max-width: 0px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(174 37 36 / var(--tw-bg-opacity));
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  --tw-content: "";
+  content: var(--tw-content);
+}
+@media (hover: hover) {
+  .styles_reputation__sliderSlideLinks__LMBBh a:hover::before {
+    content: var(--tw-content);
+    max-width: 100%;
+  }
+}
+
+@-webkit-keyframes styles_eye__BkDca {
+  0%, 100% {
+    opacity: 1;
+  }
+  69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  71% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 1;
+  }
+}
+
+@keyframes styles_eye__BkDca {
+  0%, 100% {
+    opacity: 1;
+  }
+  69% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  71% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  81% {
+    opacity: 1;
+  }
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/.pnpm/next@14.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1_sass@1.77.2/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/reputation/rating/styles.module.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.styles_ratingList__1HsvH {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem
+}
+@media (min-width: 476px) {
+  .styles_ratingList__1HsvH {
+    margin-top: 4.375rem
+  }
+}
+@media (min-width: 576px) {
+  .styles_ratingList__1HsvH {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center
+  }
+}
+
+.styles_ratingItem__v6QCh {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem
+}
+@media (min-width: 576px) {
+  .styles_ratingItem__v6QCh {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column
+  }
+}
+@media (min-width: 992px) {
+  .styles_ratingItem__v6QCh {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row
+  }
+}
+.styles_ratingItem__img__lgkIP {
+  height: auto;
+  width: 7rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0
+}
+@media (min-width: 576px) {
+  .styles_ratingItem__img__lgkIP {
+    width: 8.75rem
+  }
+}
+@media (min-width: 992px) {
+  .styles_ratingItem__img__lgkIP {
+    width: 7.5rem
+  }
+}
+@media (min-width: 1200px) {
+  .styles_ratingItem__img__lgkIP {
+    width: 8.125rem
+  }
+}
+.styles_ratingItem__img__lgkIP img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  position: static !important
+}
+.styles_ratingItem__content___VaZU {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.5rem
+}
+@media (min-width: 576px) {
+  .styles_ratingItem__content___VaZU {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center
+  }
+}
+@media (min-width: 992px) {
+  .styles_ratingItem__content___VaZU {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start
+  }
+}
+.styles_ratingItem__contentTitle__Nw_KS {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 110%
+}
+@media (min-width: 576px) {
+  .styles_ratingItem__contentTitle__Nw_KS {
+    text-align: center
+  }
+}
+@media (min-width: 992px) {
+  .styles_ratingItem__contentTitle__Nw_KS {
+    text-align: left
+  }
+}
+.styles_ratingItem__contentText__zbIPP {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 120%
+}
+@media (min-width: 576px) {
+  .styles_ratingItem__contentText__zbIPP {
+    text-align: center
+  }
+}
+@media (min-width: 992px) {
+  .styles_ratingItem__contentText__zbIPP {
+    text-align: left
+  }
+}

@@ -53,7 +53,7 @@
 		}
 	}
 	&__blockButton {
-		@apply mt-[0.625rem] hidden bg-[#F8F8F8] text-black border border-[#474747];
+		@apply mt-[0.625rem] hidden bg-[#989898] text-white;
 
 		@screen lg {
 			@apply block;
@@ -175,7 +175,7 @@
 		}
 	}
 	&__contentProjectsButton {
-		@apply bg-[#F8F8F8] text-black border border-[#474747] mt-[1.25rem];
+		@apply bg-[#989898] text-white mt-[1.25rem];
 
 		@screen xs {
 			@apply mt-[1.625rem];
