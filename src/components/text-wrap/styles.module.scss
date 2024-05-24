@@ -8,7 +8,7 @@ $maxWidth: 1920;
 }
 
 .textWrap {
-	@apply flex flex-col justify-center gap-[1.25rem] w-full overflow-hidden;
+	@apply flex flex-col justify-center gap-[.5rem] w-full overflow-hidden;
 	@screen xs {
 		@apply flex;
 	}
@@ -16,10 +16,41 @@ $maxWidth: 1920;
 	@screen sm {
 		@apply gap-[1.75rem];
 	}
+	&__itemText {
+		@apply opacity-0 invisible overflow-hidden absolute select-none max-h-0;
+		// @apply text-[3.125rem] font-black leading-[100%] tracking-[0.01em];
+		// font-family: var(--font-intro);
+		// -webkit-text-stroke: 0.063rem #000;
+
+		// -webkit-text-fill-color: transparent;
+
+		// @screen xs {
+		// 	@apply text-[4.25rem];
+		// }
+		// @screen sm {
+		// 	@apply text-[5.938rem];
+		// 	-webkit-text-stroke: 0.094rem #000;
+		// }
+		// @screen md {
+		// 	@apply text-[7.188rem];
+		// 	-webkit-text-stroke: 0.125rem #000;
+		// }
+		// @screen lg {
+		// 	@apply text-[8.375rem];
+		// 	-webkit-text-stroke: 0.125rem #000;
+		// }
+		// @screen xl {
+		// 	@apply text-[10rem];
+		// 	-webkit-text-stroke: 0.188rem #000;
+		// }
+		// @screen 2xl {
+		// 	@apply text-[10.625rem];
+		// }
+	}
 
 	&__item {
 		@apply w-full flex h-[2.4rem] items-center justify-center relative;
-
+		//
 		@screen xs {
 			@apply h-[3.125rem];
 		}
@@ -37,12 +68,6 @@ $maxWidth: 1920;
 		}
 		@screen 2xl {
 			@apply h-[7.875rem];
-		}
-		&:nth-child(even) {
-			// @apply justify-end;
-		}
-		&:nth-child(odd) {
-			// @apply justify-start;
 		}
 
 		img {

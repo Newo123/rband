@@ -14,10 +14,12 @@ import classes from './About.module.scss'
 
 const text = [
 	{
-		image: '/repText1.svg'
+		image: '/repText1.svg',
+		text: 'ПРОВЕРЕННАЯ'
 	},
 	{
-		image: '/repText2.svg'
+		image: '/repText2.svg',
+		text: 'РЕПУТАЦИЯ'
 	}
 ]
 
@@ -142,6 +144,12 @@ const projects = [
 		href: '#'
 	},
 	{
+		image: '/home-projects/15.svg',
+		name: 'КФХ Стародубец',
+		text: 'Один из лидеров по выращиванию зерновых и картофельных культур',
+		href: '#'
+	},
+	{
 		image: '/home-projects/14.svg',
 		name: 'КФХ Стародубец',
 		text: 'Один из лидеров по выращиванию зерновых и картофельных культур',
@@ -162,6 +170,7 @@ export function About() {
 					{text.map((t, i) => {
 						return (
 							<TextWrapItem
+								text={t.text}
 								image={t.image}
 								index={i}
 								key={i}

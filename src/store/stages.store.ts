@@ -2,6 +2,7 @@ import { create } from 'zustand'
 
 export type TypeTextWrap = {
 	image: string
+	text: string
 }
 
 export type TypeStagesContent = {
@@ -24,10 +25,12 @@ export const useStages = create<IStagesStore>()(set => ({
 	stages: {
 		textWraps: [
 			{
-				image: '/stages-first.svg'
+				image: '/stages-first.svg',
+				text: 'ПОЭТАПНАЯ'
 			},
 			{
-				image: '/stages-second.svg'
+				image: '/stages-second.svg',
+				text: 'РЕАЛИЗАЦИЯ'
 			}
 		],
 		content: [

@@ -10,12 +10,14 @@ export function TextWrapItem({
 	image,
 	index,
 	id,
-	reference
+	reference,
+	text
 }: {
 	image: string
 	index: number
 	id: string
 	reference: any
+	text: string
 }) {
 	const [translate, setTranslate] = useState<number>(50)
 
@@ -44,6 +46,7 @@ export function TextWrapItem({
 				willChange: 'transform'
 			}}
 		>
+			<h2 className={classes.textWrap__itemText}>{text}</h2>
 			<img
 				src={image}
 				alt='text wrap'

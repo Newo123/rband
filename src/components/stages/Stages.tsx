@@ -29,6 +29,7 @@ export function Stages() {
 					{text.map((t, i) => {
 						return (
 							<TextWrapItem
+								text={t.text}
 								image={t.image}
 								index={i}
 								key={i}

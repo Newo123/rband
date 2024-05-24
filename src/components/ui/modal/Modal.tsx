@@ -81,6 +81,7 @@ const Modal = ({
 			className={cn(classes.modal, className)}
 			ref={modalRef}
 			{...rest}
+			data-lenis-prevent
 		>
 			<div
 				className={classes.modal__shadow}
@@ -98,7 +99,7 @@ const Modal = ({
 			</button>
 			<div
 				style={{ opacity: 0 }}
-				className='w-full h-full flex flex-col lg:items-center lg:justify-center'
+				className={classes.modal__wrapper}
 				ref={modalContentRef}
 			>
 				{children}

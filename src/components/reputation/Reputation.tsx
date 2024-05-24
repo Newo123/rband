@@ -80,6 +80,7 @@ export function Reputation() {
 					{text.map((t, i) => {
 						return (
 							<TextWrapItem
+								text={t.text}
 								reference={reputationRef}
 								image={t.image}
 								index={i + 1}

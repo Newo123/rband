@@ -11,10 +11,12 @@ import { MotivationsItem } from './MotivationsItem'
 
 const text = [
 	{
-		image: '/home-motivations/wrap1.svg'
+		image: '/home-motivations/wrap1.svg',
+		text: 'ВАШ ПРОЕКТ'
 	},
 	{
-		image: '/home-motivations/wrap2.svg'
+		image: '/home-motivations/wrap2.svg',
+		text: 'НАШ ПРОЕКТ'
 	}
 ]
 
@@ -67,6 +69,7 @@ export function Motivations() {
 					{text.map((t, i) => {
 						return (
 							<TextWrapItem
+								text={t.text}
 								image={t.image}
 								index={i}
 								key={i}

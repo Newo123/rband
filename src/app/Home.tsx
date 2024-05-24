@@ -41,7 +41,7 @@ export function Home() {
 
 			<PageWrapper>
 				<Partners {...partners} />
-				<Projects {...projects} />
+				<Projects projects={projects} />
 				<About />
 				<Useful />
 				<Motivations />

@@ -18,4 +18,6 @@ export interface IProjectsSlides {
 	projects: Array<IProject>
 }
 
-export type TypeProjects = Array<IProjectsSlides> | IProjectsSlides
+export interface IProjects {
+	projects: Array<IProjectsSlides>
+}

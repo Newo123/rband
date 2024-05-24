@@ -3,10 +3,10 @@ import cn from 'clsx'
 import Heading from '../ui/Heading/Heading'
 import { Reference } from '../ui/reference/Reference'
 
-import { IProjectsSlides } from './projects.types'
+import { IProjects } from './projects.types'
 import classes from './styles.module.scss'
 
-export function ProjectsHeader({ title, projects }: IProjectsSlides) {
+export function ProjectsHeader({ projects }: IProjects) {
 	return (
 		<div className={classes.ourProjects__header}>
 			<Heading
@@ -16,7 +16,18 @@ export function ProjectsHeader({ title, projects }: IProjectsSlides) {
 				Наши проекты
 			</Heading>
 			{projects && projects?.length > 0 ? (
-				<div>{projects[0].title}</div>
+				<div className={classes.ourProjects__containerTabs}>
+					<div className={classes.ourProjects__tabs}>
+						{projects.map((project, index) => (
+							<div
+								className={cn(classes.ourProjects__tab)}
+								key={index}
+							>
+								<span>{project.title}</span>
+							</div>
+						))}
+					</div>
+				</div>
 			) : (
 				<Reference
 					href='/'

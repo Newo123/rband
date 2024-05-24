@@ -19,10 +19,12 @@ export const useReputation = create<IReputation>()(set => ({
 	reputation: {
 		textWrap: [
 			{
-				image: '/repText1.svg'
+				image: '/repText1.svg',
+				text: 'ПРОВЕРЕННАЯ'
 			},
 			{
-				image: '/repText2.svg'
+				image: '/repText2.svg',
+				text: 'РЕПУТАЦИЯ'
 			}
 		],
 		reputations: [

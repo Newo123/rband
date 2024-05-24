@@ -6,17 +6,17 @@ import { Reference } from '../ui/reference/Reference'
 
 import { ProjectsGrid } from './ProjectsGrid'
 import { ProjectsHeader } from './ProjectsHeader'
-import { TypeProjects } from './projects.types'
+import { IProjects } from './projects.types'
 import classes from './styles.module.scss'
 
-export function Projects(projects: TypeProjects) {
+export function Projects({ projects }: IProjects) {
 	return (
 		<section className={classes.ourProjects}>
 			<Container
 				variant='xl'
 				className={classes.ourProjects__container}
 			>
-				<ProjectsHeader />
+				<ProjectsHeader projects={projects} />
 				<ProjectsGrid />
 				<Reference
 					href='/'

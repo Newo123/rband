@@ -8,17 +8,10 @@ $maxWidth: 1920;
 }
 
 .localization {
-	@apply overflow-y-auto w-full h-full flex;
+	@apply w-full h-full flex;
 
 	@screen lg {
 		@apply justify-center items-center;
-	}
-
-	&::-webkit-scrollbar {
-		@apply w-[0.25rem] bg-[#989898];
-	}
-	&::-webkit-scrollbar-thumb {
-		@apply bg-white;
 	}
 
 	&__container {
