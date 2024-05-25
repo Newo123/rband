@@ -1,3 +1,5 @@
+import { FC } from 'react'
+
 import { ILang } from '@/types/lang.types'
 
 import { Home } from './Home'
@@ -8,6 +10,7 @@ type Props = {
 
 export const revalidate = 3600
 
-export default async function HomePage({ params }: Props) {
+const Page: FC<Props> = ({ params }) => {
 	return <Home />
 }
+export default Page

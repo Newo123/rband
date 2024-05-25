@@ -1,5 +1,5 @@
 .footer {
-	@apply bg-black py-[2.5rem] text-white w-full mt-auto;
+	@apply bg-black py-[2.5rem] text-white w-full mt-auto overflow-hidden;
 
 	@screen xs {
 		@apply pt-[3.125rem];

@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import { FC } from 'react'
 
 import { Service } from './Service'
 
@@ -14,31 +14,32 @@ type Props = {
 	params: { services: Array<string> }
 	searchParams: { [key: string]: string | string[] | undefined }
 }
-export async function generateMetadata({
-	params,
-	searchParams
-}: Props): Promise<Metadata> {
-	return {
-		title: params.services[params.services.length - 1]
-	}
-}
+// export async function generateMetadata({
+// 	params,
+// 	searchParams
+// }: Props): Promise<Metadata> {
+// 	return {
+// 		title: params.services[params.services.length - 1]
+// 	}
+// }
 
-const getData = async (url: string) => {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/${url}`)
+// const getData = async (url: string) => {
+// 	const res = await fetch(`https://jsonplaceholder.typicode.com/${url}`)
 
-	// if (!res.ok) {
-	// 	notFound()
-	// }
-	return res.json()
-}
+// 	// if (!res.ok) {
+// 	// 	notFound()
+// 	// }
+// 	return res.json()
+// }
 
 type TypeProps = {
 	params: { services: Array<string> }
 }
 
-export default async function Page({ params }: TypeProps) {
-	const data = await getData(params.services.join('/'))
-	console.log(data)
+const Page: FC<TypeProps> = async ({ params }) => {
+	// const data = await getData(params.services.join('/'))
+	// console.log(data)
 
 	return <Service />
 }
+export default Page

@@ -1,7 +1,5 @@
 import cn from 'clsx'
-import type { Metadata } from 'next'
-import { Montserrat } from 'next/font/google'
-import Intro from 'next/font/local'
+import type { Metadata } from 'next/types'
 import { ReactNode } from 'react'
 
 import { Footer } from '@/components/footer/Footer'
@@ -11,28 +9,9 @@ import { Providers } from '@/providers/providers'
 
 import { ILang } from '@/types/lang.types'
 
-import '@/styles/globals.scss'
+import { intro, montserrat } from '@/utils/fonts'
 
-const intro = Intro({
-	src: [
-		{
-			path: '../fonts/IntroBlackCaps.ttf'
-		},
-		{
-			path: '../fonts/IntroBlackCaps.woff'
-		},
-		{
-			path: '../fonts/IntroBlackCaps.woff2'
-		}
-	],
-	variable: '--font-intro',
-	style: 'normal',
-	weight: '900'
-})
-const montserrat = Montserrat({
-	subsets: ['latin', 'cyrillic'],
-	variable: '--font-montserrat'
-})
+import '@/styles/globals.scss'
 
 export const metadata: Metadata = {
 	title: 'RBAND',
