@@ -48,7 +48,10 @@
 		@apply w-full overflow-visible relative;
 
 		&::before {
-			@apply content-[''] w-screen h-full absolute top-0 left-[-1rem] -translate-x-full bg-[#E5E5E5] z-[2];
+			@apply content-[''] hidden w-screen h-full absolute top-0 left-[-1rem] -translate-x-full bg-[#E5E5E5] z-[2];
+			@screen xl {
+				@apply block;
+			}
 		}
 	}
 	&__sliderSlide {

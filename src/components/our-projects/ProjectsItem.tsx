@@ -33,7 +33,8 @@ export function ProjectsItem({
 			animation: gsap.to(animationRef.current, {
 				translateY: 0,
 				opacity: 1,
-				duration: 1
+				duration: 1,
+				delay: -0.2
 			}),
 			onToggle: self => {
 				if (self.isActive) {

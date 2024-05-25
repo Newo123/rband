@@ -1,24 +1,24 @@
 .descriptor {
 	@apply sticky top-0 w-full max-h-[30rem] min-h-[24rem] bg-black;
-	height: calc(100dvh - 4.563rem);
+	height: calc(100vh - 4.563rem);
 
 	@screen xs {
 		@apply max-h-[40rem] min-h-[34rem];
-		height: calc(100dvh - 5.063rem);
+		height: calc(100vh - 5.063rem);
 	}
 	@screen sm {
 		@apply max-h-[46rem] min-h-[28rem];
 	}
 	@screen lg {
 		@apply max-h-[53.125rem] min-h-[32rem];
-		height: calc(100dvh - 5.875rem);
+		height: calc(100vh - 5.875rem);
 	}
 	@screen xl {
 		@apply min-h-[36rem];
-		height: calc(100dvh - 6.375rem);
+		height: calc(100vh - 6.375rem);
 	}
 	@screen 2xl {
-		height: calc(100dvh - 6.313rem);
+		height: calc(100vh - 6.313rem);
 	}
 
 	&::before {

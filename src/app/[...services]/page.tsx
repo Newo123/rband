@@ -10,10 +10,10 @@ import { Service } from './Service'
 // 		description: 'RBAND Services'
 // 	}
 // }
-type Props = {
-	params: { services: Array<string> }
-	searchParams: { [key: string]: string | string[] | undefined }
-}
+// type Props = {
+// 	params: { services: Array<string> }
+// 	searchParams: { [key: string]: string | string[] | undefined }
+// }
 // export async function generateMetadata({
 // 	params,
 // 	searchParams
@@ -32,11 +32,11 @@ type Props = {
 // 	return res.json()
 // }
 
-type TypeProps = {
+interface IProps {
 	params: { services: Array<string> }
 }
 
-const Page: FC<TypeProps> = async ({ params }) => {
+const Page: FC<IProps> = async ({ params }) => {
 	// const data = await getData(params.services.join('/'))
 	// console.log(data)
 
