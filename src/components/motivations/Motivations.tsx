@@ -1,9 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
-
 import { TextWrap } from '../text-wrap/TextWrap'
-import { TextWrapItem } from '../text-wrap/TextWrapItem'
 import { Container } from '../ui/container/Container'
 
 import classes from './Motivations.module.scss'
@@ -57,29 +54,13 @@ const motivations = [
 ]
 
 export function Motivations() {
-	const textRef = useRef(null)
 	return (
 		<section className={classes.motivations}>
-			{text.length > 0 && (
-				<TextWrap
-					id='motivation-text-wrap'
-					className={classes.motivations__textWrap}
-					ref={textRef}
-				>
-					{text.map((t, i) => {
-						return (
-							<TextWrapItem
-								text={t.text}
-								image={t.image}
-								index={i}
-								key={i}
-								reference={textRef}
-								id='#motivation-text-wrap'
-							/>
-						)
-					})}
-				</TextWrap>
-			)}
+			<TextWrap
+				images={text}
+				variant='reverse'
+				className={classes.motivations__textWrap}
+			/>
 			<Container
 				variant='xl'
 				className={classes.motivations__container}

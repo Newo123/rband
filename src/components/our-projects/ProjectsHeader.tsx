@@ -7,6 +7,17 @@ import { IProjects } from './projects.types'
 import classes from './styles.module.scss'
 
 export function ProjectsHeader({ projects }: IProjects) {
+	let isTitles: Array<boolean> = []
+	projects.forEach(item => {
+		const isTitle = item.hasOwnProperty('title')
+
+		if (isTitle) {
+			isTitles.push(isTitle)
+		} else {
+			return
+		}
+	})
+
 	return (
 		<div className={classes.ourProjects__header}>
 			<Heading
@@ -15,7 +26,7 @@ export function ProjectsHeader({ projects }: IProjects) {
 			>
 				Наши проекты
 			</Heading>
-			{projects && projects?.length > 0 ? (
+			{projects && isTitles?.length > 0 ? (
 				<div className={classes.ourProjects__containerTabs}>
 					<div className={classes.ourProjects__tabs}>
 						{projects.map((project, index) => (

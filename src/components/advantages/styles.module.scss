@@ -40,6 +40,25 @@
 				rgb(160, 160, 160) 100%
 			);
 		}
+
+		&_rounded {
+			&::before {
+				@apply w-[28.5rem] h-[28.5rem] rounded-full right-0;
+
+				@screen xl {
+					@apply w-[26.25rem] h-[26.25rem] right-[1.875rem];
+				}
+
+				@screen 2xl {
+					@apply w-[30.625rem] h-[30.625rem] right-[2.25rem];
+				}
+			}
+		}
+	}
+
+	&__imgCount {
+		@apply text-[190px] font-black leading-100 absolute top-0 right-0;
+		font-family: var(--font-intro);
 	}
 
 	&__img {
@@ -71,6 +90,36 @@
 		}
 	}
 
+	&__itemLinks {
+		@apply flex flex-col gap-[1.25rem] mt-[1rem];
+
+		@screen sm {
+			@apply gap-[1.125rem];
+		}
+		@screen lg {
+			@apply gap-[1.625rem] mt-[2.375rem];
+		}
+	}
+	&__itemLink {
+		@apply flex gap-[.625rem] text-[1.125rem] font-semibold leading-120 transition-colors duration-300 w-fit;
+
+		@screen lg {
+			@apply text-[1.625rem];
+		}
+
+		@media (hover: hover) {
+			@apply hover:text-[#AE2524];
+		}
+
+		span {
+			background-image: url('/home-services/arrow.svg');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			@apply w-[1.25rem] h-[1.25rem];
+		}
+	}
+
 	&__trigger {
 		@apply pt-[5rem] first:pt-0 h-fit;
 
@@ -89,6 +138,24 @@
 			@apply w-full h-full object-cover object-center;
 			// position: static !important;
 		}
+
+		&_home {
+			@apply mb-[1.25rem];
+
+			img {
+				@apply hidden;
+
+				@screen lg {
+					@apply block;
+				}
+			}
+		}
+	}
+	&__itemImageCount {
+		@apply font-black text-[28px] leading-100;
+		font-family: var(--font-intro);
+		-webkit-text-stroke: 1px;
+		-webkit-text-fill-color: transparent;
 	}
 	&__itemTitle {
 		@apply mt-[3.125rem] first:mt-0;
@@ -112,6 +179,14 @@
 		}
 		@screen lg {
 			@apply text-[1.125rem];
+		}
+
+		&_home {
+			@apply hidden;
+
+			@screen sm {
+				@apply block;
+			}
 		}
 	}
 

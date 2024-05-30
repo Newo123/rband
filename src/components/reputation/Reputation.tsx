@@ -10,7 +10,6 @@ import { Swiper as TypeSwiper } from 'swiper/types'
 import { useReputation } from '@/store/reputation.store'
 
 import { TextWrap } from '../text-wrap/TextWrap'
-import { TextWrapItem } from '../text-wrap/TextWrapItem'
 import { Container } from '../ui/container/Container'
 
 import { ReputationSliderLink } from './ReputationSliderLink'
@@ -71,26 +70,10 @@ export function Reputation() {
 
 	return (
 		<section className={classes.reputation}>
-			{text.length > 0 && (
-				<TextWrap
-					id='reputation-text-wrap'
-					variant='reverse'
-					ref={reputationRef}
-				>
-					{text.map((t, i) => {
-						return (
-							<TextWrapItem
-								text={t.text}
-								reference={reputationRef}
-								image={t.image}
-								index={i + 1}
-								key={i}
-								id='#reputation-text-wrap'
-							/>
-						)
-					})}
-				</TextWrap>
-			)}
+			<TextWrap
+				images={text}
+				variant='reverse'
+			/>
 			<Container
 				variant='xl'
 				className={classes.reputation__container}

@@ -120,6 +120,7 @@ export function Descriptor() {
 								alt='descriptor'
 								sizes='100vw'
 								fill
+								priority
 							/>
 						</div>
 						<div className={classes.descriptor__actionsVideo}>

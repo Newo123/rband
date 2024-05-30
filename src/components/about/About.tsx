@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation'
 import { useRef } from 'react'
 
 import { TextWrap } from '../text-wrap/TextWrap'
-import { TextWrapItem } from '../text-wrap/TextWrapItem'
 import { Button } from '../ui/button/Button'
 import { Container } from '../ui/container/Container'
 
@@ -156,31 +155,14 @@ const projects = [
 		href: '#'
 	}
 ]
+
 export function About() {
 	const textRef = useRef(null)
 	const router = useRouter()
+
 	return (
 		<section className={classes.about}>
-			{text.length > 0 && (
-				<TextWrap
-					id='about-text-wrap'
-					className={classes.about__textWrap}
-					ref={textRef}
-				>
-					{text.map((t, i) => {
-						return (
-							<TextWrapItem
-								text={t.text}
-								image={t.image}
-								index={i}
-								key={i}
-								reference={textRef}
-								id='#about-text-wrap'
-							/>
-						)
-					})}
-				</TextWrap>
-			)}
+			<TextWrap images={text} />
 			<Container
 				variant='xl'
 				className={classes.about__container}
@@ -219,9 +201,7 @@ export function About() {
 								src='/about-img.png'
 								alt='about images'
 								fill
-								sizes='100vw'
-								objectFit='cover'
-								objectPosition='center'
+								sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 							/>
 							<video
 								loop

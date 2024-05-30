@@ -18,6 +18,7 @@ export function MotivationsItem({ image, texts, title }: IMotivationsItem) {
 						alt={title}
 						width={107}
 						height={90}
+						unoptimized={true}
 					/>
 				</div>
 				<h6 className={classes.motivations__itemContentTitle}>{title}</h6>

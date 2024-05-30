@@ -5,7 +5,6 @@ import { ILocalization } from './localization.types'
 import classes from './styles.module.scss'
 
 export function Localization({ regions, country }: ILocalization) {
-	console.log(regions, country)
 	return (
 		<div className={classes.localization}>
 			<div className={classes.localization__container}>

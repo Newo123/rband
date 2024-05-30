@@ -134,8 +134,11 @@
 	}
 
 	&__descriptionText {
-		@apply mt-[2.5rem] text-center text-[1.125rem] font-semibold leading-150;
+		@apply mt-[2.5rem] text-center text-[1.125rem] font-semibold leading-150 inline;
 
+		span {
+			@apply inline;
+		}
 		@screen xs {
 			@apply text-[1.25rem] mt-[3.625rem];
 		}
@@ -159,5 +162,13 @@
 	}
 	&__descriptionTextMask {
 		@apply absolute top-0 right-0 w-full h-full bg-[#e5e5e5] bg-opacity-80;
+	}
+}
+.word {
+	@apply relative;
+
+	&__shadow {
+		@apply absolute right-0 top-0 h-full w-full max-w-full;
+		background-color: rgba(229, 229, 229, 0.8);
 	}
 }
