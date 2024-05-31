@@ -1,0 +1,141 @@
+.hero {
+	@apply pt-[6.438rem] bg-black text-white pb-[1.875rem];
+	@screen xs {
+		@apply pt-[6.75rem];
+	}
+	@screen sm {
+		@apply pt-[7.875rem];
+	}
+	@screen lg {
+		@apply pt-[8.875rem] pb-[2.5rem];
+	}
+	@screen xl {
+		@apply pt-[9.5rem] pb-[3.125rem];
+	}
+
+	&__container {
+		@apply flex flex-col gap-[2.5rem];
+
+		@screen sm {
+			@apply gap-[2.813rem];
+		}
+
+		@screen lg {
+			@apply flex-row items-end justify-between;
+		}
+	}
+
+	&__content {
+		@apply flex flex-col gap-[0.375rem];
+
+		@screen sm {
+			@apply gap-[.625rem];
+		}
+
+		@screen lg {
+			@apply max-w-[47.5rem];
+		}
+
+		@screen xl {
+			@apply max-w-[46rem];
+		}
+		@screen 2xl {
+			@apply max-w-[53.563rem];
+		}
+	}
+	&__inners {
+		@apply mx-[-1rem] px-[1rem] flex items-center overflow-x-auto gap-[.625rem] mt-[1.875rem];
+
+		&::-webkit-scrollbar {
+			@apply hidden;
+		}
+		@screen xs {
+			@apply mx-[-1.5rem] px-[1.5rem] gap-[1rem];
+		}
+		@screen lg {
+			@apply mt-[2.5rem] mx-0 px-0;
+		}
+	}
+	&__innersLink {
+		@apply relative shrink-0 overflow-hidden py-[.5rem] px-[.75rem] rounded-[1.875rem] border border-white whitespace-nowrap text-[.75rem] font-semibold leading-100;
+		&::before {
+			@apply content-[''] absolute top-0 left-0 w-full max-w-0 h-full bg-white transition-all duration-500;
+		}
+		span {
+			@apply relative mix-blend-difference z-[2];
+		}
+
+		@media (hover: hover) {
+			@apply hover:before:max-w-full;
+		}
+	}
+
+	&__text {
+		@apply text-[.875rem] font-medium leading-150;
+		@screen xs {
+			@apply text-[1rem];
+		}
+
+		@screen sm {
+			@apply text-[1.125rem];
+		}
+	}
+	&__reviews {
+		@apply flex items-center gap-[1rem] shrink-0;
+
+		@screen xs {
+			@apply gap-[2.5rem];
+		}
+
+		@screen lg {
+			@apply flex-col-reverse gap-[1.875rem];
+		}
+	}
+	&__reviewsIcons {
+		@apply flex items-center gap-[.625rem];
+
+		@screen xs {
+			@apply gap-[1.875rem];
+		}
+		@screen lg {
+			@apply self-end;
+		}
+	}
+
+	&__reviewsIconsIcon {
+		@apply flex items-center gap-[.375rem] text-[1rem] font-semibold leading-120;
+		@screen xs {
+			@apply text-[1.375rem];
+		}
+
+		img {
+			@apply w-[1.875rem] h-[1.625rem] object-contain object-center;
+
+			@screen xs {
+				@apply w-[2.5rem] h-[2.125rem];
+			}
+			@screen lg {
+				@apply w-[1.875rem] h-[1.625rem];
+			}
+		}
+	}
+
+	&__reviewsText {
+		@apply flex flex-col gap-[.25rem];
+		p {
+			@apply text-[0.938rem] font-normal leading-120 tracking-[.04em] uppercase pl-[1.25rem] text-left relative;
+			font-family: var(--font-intro);
+
+			&::before {
+				@apply content-[''] absolute top-0 left-0 bg-[url('/white-arrow.svg')] object-center bg-no-repeat h-[.75rem] w-[.75rem];
+				background-size: 0.75rem;
+			}
+		}
+		span {
+			@apply text-[0.75rem] leading-120 font-medium tracking-[.03em] text-left;
+			@screen xs {
+				@apply text-[0.875rem];
+			}
+		}
+	}
+}

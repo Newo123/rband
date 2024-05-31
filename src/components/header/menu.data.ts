@@ -19,7 +19,7 @@ export const menu = [
 		title: 'Блог'
 	},
 	{
-		href: '#',
+		href: '/reviews',
 		title: 'Отзывы'
 	},
 	{
