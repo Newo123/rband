@@ -6,27 +6,19 @@ import { Reference } from '../ui/reference/Reference'
 import { IProjects } from './projects.types'
 import classes from './styles.module.scss'
 
-export function ProjectsHeader({ projects }: IProjects) {
-	let isTitles: Array<boolean> = []
-	projects.forEach(item => {
-		const isTitle = item.hasOwnProperty('title')
-
-		if (isTitle) {
-			isTitles.push(isTitle)
-		} else {
-			return
-		}
-	})
-
+export function ProjectsHeader({ projects, title }: IProjects) {
 	return (
 		<div className={classes.ourProjects__header}>
-			<Heading
-				tag='h4'
-				className={cn('site-title-2', classes.ourProjects__title)}
-			>
-				Наши проекты
-			</Heading>
-			{projects && isTitles?.length > 0 ? (
+			{title && (
+				<Heading
+					tag='h4'
+					className={cn('site-title-2', classes.ourProjects__title)}
+				>
+					{title}
+				</Heading>
+			)}
+
+			{Array.isArray(projects) && projects ? (
 				<div className={classes.ourProjects__containerTabs}>
 					<div className={classes.ourProjects__tabs}>
 						{projects.map((project, index) => (

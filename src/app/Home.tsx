@@ -44,7 +44,10 @@ export function Home() {
 			<PageWrapper>
 				<Partners {...partners} />
 				<Advantages advantages={advantagesDataHome} />
-				<Projects projects={projects} />
+				<Projects
+					title='Наши проекты'
+					projects={projects}
+				/>
 				<About />
 				<Useful />
 				<Motivations />

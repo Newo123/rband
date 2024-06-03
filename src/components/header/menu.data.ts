@@ -11,7 +11,7 @@ export const menu = [
 		title: 'Мы'
 	},
 	{
-		href: '#',
+		href: 'projects/project',
 		title: 'Проекты'
 	},
 	{

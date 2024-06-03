@@ -8,10 +8,6 @@ export function ReviewsItem({ author, image, links, text, title }: IReviews) {
 	return (
 		<div className={classes.reviews__item}>
 			<div className={classes.reviews__itemImage}>
-				{/* <img
-					src={image}
-					alt={title}
-				/> */}
 				<Image
 					src={image}
 					alt={title}

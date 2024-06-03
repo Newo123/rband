@@ -18,6 +18,11 @@ export interface IProjectsSlides {
 	projects: Array<IProject>
 }
 
+// export interface IProjects {
+// 	projects: Array<IProjectsSlides>
+// }
+
 export interface IProjects {
-	projects: Array<IProjectsSlides>
+	title?: string
+	projects: Array<IProjectsSlides> | IProjectsSlides
 }

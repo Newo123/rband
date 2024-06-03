@@ -1,17 +1,24 @@
 'use client'
 
-import { useGSAP } from '@gsap/react'
 import cn from 'clsx'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRef, useState } from 'react'
 
-import { IProject } from '@/store/our-project.store'
-
+import { IProject } from './projects.types'
 import classes from './styles.module.scss'
 
-type TypeProject = IProject
+const animation = {
+	inactive: {
+		y: 100,
+		opacity: 0
+	},
+	active: {
+		y: 0,
+		opacity: 1
+	}
+}
 
 export function ProjectsItem({
 	href,
@@ -21,46 +28,49 @@ export function ProjectsItem({
 	shadow,
 	textColor,
 	video
-}: TypeProject) {
+}: IProject) {
 	const itemRef = useRef(null)
 	const animationRef = useRef(null)
+	const videoRef = useRef(null)
 	const [isVisible, setIsVisible] = useState<boolean>(false)
-	useGSAP(() => {
-		ScrollTrigger.create({
-			trigger: itemRef.current,
-			start: 'top bottom',
-			end: 'bottom top',
-			animation: gsap.to(animationRef.current, {
-				translateY: 0,
-				opacity: 1,
-				duration: 1,
-				delay: -0.2
-			}),
-			onToggle: self => {
-				if (self.isActive) {
-					const video = self.trigger?.querySelector('video')
-					setIsVisible(!isVisible)
+	// useGSAP(() => {
+	// 	ScrollTrigger.create({
+	// 		trigger: itemRef.current,
+	// 		start: 'top bottom',
+	// 		end: 'bottom top',
+	// 		animation: gsap.to(animationRef.current, {
+	// 			translateY: 0,
+	// 			opacity: 1,
+	// 			duration: 1,
+	// 			delay: -0.2
+	// 		}),
+	// 		onToggle: self => {
+	// 			if (self.isActive) {
+	// 				const video = self.trigger?.querySelector('video')
+	// 				setIsVisible(!isVisible)
 
-					if (video) video.play()
-				} else {
-					const video = self.trigger?.querySelector('video')
-					if (video) video.pause()
-				}
-			}
-		})
-	})
+	// 				if (video) video.play()
+	// 			} else {
+	// 				const video = self.trigger?.querySelector('video')
+	// 				if (video) video.pause()
+	// 			}
+	// 		}
+	// 	})
+	// })
 	return (
-		<div
+		<motion.div
+			initial='inactive'
+			whileInView='active'
+			variants={animation}
 			ref={animationRef}
-			style={{ transform: 'translateY(100%)', opacity: 0 }}
+			transition={{ duration: 0.75 }}
 		>
-			<a
+			<Link
 				href={href}
 				className={cn(
 					classes.ourProjects__item,
 					textColor === 'white' ? classes.ourProjects__textWhite : ''
 				)}
-				key={Math.random()}
 				ref={itemRef}
 			>
 				<div
@@ -77,7 +87,7 @@ export function ProjectsItem({
 						/>
 					)}
 
-					{isVisible && video?.length ? (
+					{video?.length && (
 						<video
 							loop
 							autoPlay
@@ -86,6 +96,7 @@ export function ProjectsItem({
 							playsInline
 							controls={false}
 							poster={image}
+							ref={videoRef}
 						>
 							{video.map((v, i) => (
 								<source
@@ -95,12 +106,12 @@ export function ProjectsItem({
 								/>
 							))}
 						</video>
-					) : null}
+					)}
 				</div>
 
 				<h6 className={classes.ourProjects__itemTitle}>{title}</h6>
 				<p className={classes.ourProjects__itemText}>{text}</p>
-			</a>
-		</div>
+			</Link>
+		</motion.div>
 	)
 }

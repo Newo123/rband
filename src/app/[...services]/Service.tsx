@@ -49,7 +49,10 @@ export function Service() {
 				<Partners {...partners} />
 				<Services />
 				<Advantages advantages={advantagesData} />
-				<Projects projects={projectsServices} />
+				<Projects
+					title='Наши проекты'
+					projects={projectsServices}
+				/>
 				<Stages />
 				<Principles />
 				<Reputation />
