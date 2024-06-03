@@ -17,6 +17,7 @@ export function ReviewsItem({ author, image, links, text, title }: IReviews) {
 					alt={title}
 					width={500}
 					height={338}
+					quality={100}
 				/>
 			</div>
 			<div className={classes.reviews__itemContent}>
