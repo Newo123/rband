@@ -4,18 +4,18 @@ import cn from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 import { IProject } from './projects.types'
 import classes from './styles.module.scss'
 
 const animation = {
 	inactive: {
-		y: 100,
+		transform: 'translateY(50%)',
 		opacity: 0
 	},
 	active: {
-		y: 0,
+		transform: 'translateY(0%)',
 		opacity: 1
 	}
 }
@@ -32,31 +32,16 @@ export function ProjectsItem({
 	const itemRef = useRef(null)
 	const animationRef = useRef(null)
 	const videoRef = useRef(null)
-	const [isVisible, setIsVisible] = useState<boolean>(false)
-	// useGSAP(() => {
-	// 	ScrollTrigger.create({
-	// 		trigger: itemRef.current,
-	// 		start: 'top bottom',
-	// 		end: 'bottom top',
-	// 		animation: gsap.to(animationRef.current, {
-	// 			translateY: 0,
-	// 			opacity: 1,
-	// 			duration: 1,
-	// 			delay: -0.2
-	// 		}),
-	// 		onToggle: self => {
-	// 			if (self.isActive) {
-	// 				const video = self.trigger?.querySelector('video')
-	// 				setIsVisible(!isVisible)
 
-	// 				if (video) video.play()
-	// 			} else {
-	// 				const video = self.trigger?.querySelector('video')
-	// 				if (video) video.pause()
-	// 			}
-	// 		}
-	// 	})
-	// })
+	const handleEnter = (e: any) => {
+		const video = e.target as HTMLVideoElement
+		video.play()
+	}
+	const handleLeave = (e: any) => {
+		const video = e.target as HTMLVideoElement
+		video.pause()
+	}
+
 	return (
 		<motion.div
 			initial='inactive'
@@ -64,6 +49,7 @@ export function ProjectsItem({
 			variants={animation}
 			ref={animationRef}
 			transition={{ duration: 0.75 }}
+			viewport={{ once: true }}
 		>
 			<Link
 				href={href}
@@ -88,7 +74,7 @@ export function ProjectsItem({
 					)}
 
 					{video?.length && (
-						<video
+						<motion.video
 							loop
 							autoPlay
 							preload='auto'
@@ -97,6 +83,8 @@ export function ProjectsItem({
 							controls={false}
 							poster={image}
 							ref={videoRef}
+							onViewportEnter={handleEnter}
+							onViewportLeave={handleLeave}
 						>
 							{video.map((v, i) => (
 								<source
@@ -105,7 +93,7 @@ export function ProjectsItem({
 									key={i}
 								/>
 							))}
-						</video>
+						</motion.video>
 					)}
 				</div>
 

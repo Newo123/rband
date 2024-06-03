@@ -1,5 +1,5 @@
 .hero {
-	@apply pt-[6.438rem] bg-black text-white pb-[1.875rem];
+	@apply pt-[6.438rem] bg-black text-white pb-[1.875rem] sticky top-0;
 	@screen xs {
 		@apply pt-[6.75rem];
 	}
@@ -137,5 +137,60 @@
 				@apply text-[0.875rem];
 			}
 		}
+	}
+
+	&__projects {
+		@apply hidden;
+
+		@screen lg {
+			@apply flex flex-col gap-[.625rem] relative max-w-[11.063rem] w-full z-[-1];
+		}
+
+		@screen xl {
+			@apply max-w-[12.875rem] gap-[0.938rem];
+		}
+
+		@screen 2xl {
+			@apply text-[0.313rem];
+		}
+	}
+	&__projectsMask {
+		@apply bg-black rounded-full w-full h-full overflow-hidden;
+	}
+	&__projectsImage {
+		@apply absolute w-[9.375rem] rounded-full overflow-hidden h-[9.375rem] top-[-5.125rem] left-[-7.5rem];
+		@screen xl {
+			@apply w-[11.5rem] h-[11.5rem] top-[-6.25rem] left-[-6.938rem];
+		}
+		@screen 2xl {
+			@apply left-[-6.75rem] top-[-6.938rem];
+		}
+		&::after {
+			@apply content-[''] absolute top-0 left-0 w-full h-full bg-black bg-opacity-20;
+
+			@screen 2xl {
+				@apply bg-opacity-15;
+			}
+		}
+
+		img {
+			@apply w-full h-full object-cover object-center;
+		}
+	}
+
+	&__projectsCount {
+		@apply text-[3.125rem] font-bold leading-110 relative;
+
+		@screen xl {
+			@apply text-[3.75rem];
+		}
+
+		span {
+			@apply text-[#989898];
+		}
+	}
+
+	&__projectsText {
+		@apply text-[.75rem] font-medium leading-150 tracking-[0.03em] uppercase relative;
 	}
 }

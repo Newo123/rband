@@ -3,6 +3,7 @@ import { FC } from 'react'
 
 import { Hero } from '@/components/hero/Hero'
 import { Reviews } from '@/components/reviews/Reviews'
+import { PageWrapper } from '@/components/ui/pageWrapper/PageWrapper'
 
 export const metadata: Metadata = {
 	title: 'Reviews',
@@ -63,7 +64,9 @@ const Page: FC<IPage> = () => {
 	return (
 		<>
 			<Hero {...hero} />
-			<Reviews {...reviews} />
+			<PageWrapper>
+				<Reviews {...reviews} />
+			</PageWrapper>
 		</>
 	)
 }

@@ -1,0 +1,8 @@
+.projectsPageWrapper {
+	@screen lg {
+		@apply pt-[1.375rem];
+	}
+	@screen xl {
+		@apply pt-[2rem];
+	}
+}

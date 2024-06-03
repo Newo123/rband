@@ -4,6 +4,9 @@ import { FC } from 'react'
 import { Hero } from '@/components/hero/Hero'
 import { Projects } from '@/components/our-projects/Projects'
 import { projectsServices } from '@/components/our-projects/projects.data'
+import { PageWrapper } from '@/components/ui/pageWrapper/PageWrapper'
+
+import classes from './styles.module.scss'
 
 export const metadata: Metadata = {
 	title: 'Projects',
@@ -31,14 +34,21 @@ const hero = {
 			text: 'Дизайн-поддержка',
 			href: '#'
 		}
-	]
+	],
+	projects: {
+		image: '/projects-page/1.png',
+		text: 'Успешно запущенных сайтов и сервисов',
+		count: '150'
+	}
 }
 const Page: FC<IPage> = () => {
 	return (
 		<>
 			<Hero {...hero} />
 
-			<Projects projects={projectsServices} />
+			<PageWrapper className={classes.projectsPageWrapper}>
+				<Projects projects={projectsServices} />
+			</PageWrapper>
 		</>
 	)
 }
