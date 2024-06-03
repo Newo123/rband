@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import classes from './Reviews.module.scss'
@@ -8,12 +7,16 @@ export function ReviewsItem({ author, image, links, text, title }: IReviews) {
 	return (
 		<div className={classes.reviews__item}>
 			<div className={classes.reviews__itemImage}>
-				<Image
+				<img
+					src={image}
+					alt={title}
+				/>
+				{/* <Image
 					src={image}
 					alt={title}
 					width={500}
 					height={338}
-				/>
+				/> */}
 			</div>
 			<div className={classes.reviews__itemContent}>
 				<h6 className={classes.reviews__itemTitle}>{title}</h6>
