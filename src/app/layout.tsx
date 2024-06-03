@@ -29,9 +29,8 @@ export default function RootLayout({ children, params }: Readonly<Props>) {
 		<html
 			lang={params.lang ? params.lang : 'ru'}
 			className={cn(montserrat.className, montserrat.variable, intro.variable)}
-			suppressHydrationWarning={true}
 		>
-			<body suppressHydrationWarning={true}>
+			<body>
 				<Providers>
 					<Header />
 					<main>{children}</main>
