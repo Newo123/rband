@@ -7,7 +7,7 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Сайт завода «Термотрон», Россия',
 				text: 'Сочетание многолетнего опыта, мощности и инноваций.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				shadow: true,
 				image: '/project3.jpg',
@@ -21,33 +21,33 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project1.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			}
 		]
@@ -58,7 +58,7 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Сайт завода «Термотрон», Россия',
 				text: 'Сочетание многолетнего опыта, мощности и инноваций.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				shadow: true,
 				image: '/project3.jpg',
@@ -72,33 +72,33 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project1.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			}
 		]
@@ -109,7 +109,7 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Сайт завода «Термотрон», Россия',
 				text: 'Сочетание многолетнего опыта, мощности и инноваций.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				shadow: true,
 				image: '/project3.jpg',
@@ -123,33 +123,33 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project1.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			}
 		]
@@ -160,7 +160,7 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Сайт завода «Термотрон», Россия',
 				text: 'Сочетание многолетнего опыта, мощности и инноваций.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				shadow: true,
 				image: '/project3.jpg',
@@ -174,33 +174,33 @@ export const projects: Array<IProjectsSlides> = [
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project1.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				textColor: 'white',
 				image: '/project2.jpg'
 			},
 			{
 				title: 'Cайт девелоперской компании «САКС», Россия',
 				text: 'Cовременный подход в проектировании сайта и квартир.',
-				href: '/',
+				href: '/projects/categories/project',
 				image: '/project4.jpg'
 			}
 		]
@@ -211,7 +211,7 @@ export const projectsServices: IProjectsSlides = {
 		{
 			title: 'Сайт завода «Термотрон», Россия',
 			text: 'Сочетание многолетнего опыта, мощности и инноваций.',
-			href: '/',
+			href: '/projects/categories/project',
 			textColor: 'white',
 			shadow: true,
 			image: '/project3.jpg',
@@ -225,33 +225,33 @@ export const projectsServices: IProjectsSlides = {
 		{
 			title: 'Cайт девелоперской компании «САКС», Россия',
 			text: 'Cовременный подход в проектировании сайта и квартир.',
-			href: '/',
+			href: '/projects/categories/project',
 			image: '/project1.jpg'
 		},
 		{
 			title: 'Cайт девелоперской компании «САКС», Россия',
 			text: 'Cовременный подход в проектировании сайта и квартир.',
-			href: '/',
+			href: '/projects/categories/project',
 			textColor: 'white',
 			image: '/project2.jpg'
 		},
 		{
 			title: 'Cайт девелоперской компании «САКС», Россия',
 			text: 'Cовременный подход в проектировании сайта и квартир.',
-			href: '/',
+			href: '/projects/categories/project',
 			image: '/project4.jpg'
 		},
 		{
 			title: 'Cайт девелоперской компании «САКС», Россия',
 			text: 'Cовременный подход в проектировании сайта и квартир.',
-			href: '/',
+			href: '/projects/categories/project',
 			textColor: 'white',
 			image: '/project2.jpg'
 		},
 		{
 			title: 'Cайт девелоперской компании «САКС», Россия',
 			text: 'Cовременный подход в проектировании сайта и квартир.',
-			href: '/',
+			href: '/projects/categories/project',
 			image: '/project4.jpg'
 		}
 	]

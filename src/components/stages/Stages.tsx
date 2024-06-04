@@ -34,7 +34,10 @@ export function Stages() {
 					<StagesList />
 				</div>
 				<StagesText text={words} />
-				<Bullet title='Начать <br /> проект'>
+				<Bullet
+					className={classes.stages__bullet}
+					title='Начать <br /> проект'
+				>
 					<Form />
 				</Bullet>
 			</Container>

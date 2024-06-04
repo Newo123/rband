@@ -1,9 +1,10 @@
 'use client'
 
 import cn from 'clsx'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useRef } from 'react'
+
+import { useParallax } from '@/hooks/useParallax'
 
 import { Container } from '../ui/container/Container'
 
@@ -15,13 +16,13 @@ import { IHero } from './hero.types'
 const MContainer = motion(Container)
 
 export function Hero({ title, text, inners, reviews, projects }: IHero) {
-	const containerRef = useRef(null)
-	const { scrollYProgress } = useScroll({
-		target: containerRef,
-		offset: ['start start', 'end start']
-	})
-	const scale = useTransform(scrollYProgress, [0, 1], ['1', '0.4'])
-	const opacity = useTransform(scrollYProgress, [0, 1], ['1', '0'])
+	const { opacity, scale } = useParallax()
+	// const { scrollYProgress } = useScroll({
+	// 	target: containerRef,
+	// 	offset: ['start start', 'end start']
+	// })
+	// const scale = useTransform(scrollYProgress, [0, 1], ['1', '0.4'])
+	// const opacity = useTransform(scrollYProgress, [0, 1], ['1', '0'])
 
 	return (
 		<section className={classes.hero}>

@@ -33,7 +33,7 @@ const Modal = ({
 						duration: 0.4,
 						onStart: () => {
 							document.body.style.overflowY = 'hidden'
-							document.body.style.marginRight = '17px'
+							document.body.style.marginRight = '1.063rem'
 						}
 					})
 					.to(modalRef.current, {

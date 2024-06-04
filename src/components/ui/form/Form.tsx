@@ -19,7 +19,12 @@ export function Form() {
 			<p className={classes.form__privacy}>
 				Отправляя форму, я соглашаюсь с <span>правилами</span>
 			</p>
-			<Button className={classes.form__submit}>ОТПРАВИТЬ</Button>
+			<Button
+				className={classes.form__submit}
+				style={{ flexShrink: 0 }}
+			>
+				<span>ОТПРАВИТЬ</span>
+			</Button>
 		</form>
 	)
 }

@@ -2,10 +2,10 @@
 	@apply bg-[#E5E5E5];
 
 	&__container {
-		@apply mt-[1rem] flex flex-col items-center relative pb-[12rem];
+		@apply mt-[1rem] flex flex-col items-center relative;
 
 		@screen xs {
-			@apply mt-[1.25rem] pb-[10rem];
+			@apply mt-[1.25rem];
 		}
 
 		@screen sm {
@@ -16,12 +16,16 @@
 			@apply mt-[2rem];
 		}
 		@screen lg {
-			@apply pb-[17.188rem] mt-[2.5rem];
+			@apply mt-[2.5rem];
 		}
 
 		@screen xl {
 			@apply mt-[4.5rem];
 		}
+	}
+
+	&__bullet {
+		@apply bottom-[-120px];
 	}
 
 	&__textWrap {

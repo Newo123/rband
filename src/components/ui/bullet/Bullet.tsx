@@ -1,9 +1,6 @@
 'use client'
 
-import { useGSAP } from '@gsap/react'
 import cn from 'clsx'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 import {
 	HTMLAttributes,
 	PropsWithChildren,
@@ -47,51 +44,51 @@ export function Bullet({ className, children, title, ...rest }: TypeBullet) {
 		getMaxHeight()
 	}, [])
 
-	useGSAP(
-		() => {
-			ScrollTrigger.create({
-				trigger: bulletRef.current,
-				start: 'top 75%',
-				end: 'bottom 25%',
-				onEnter: self => {
-					gsap
-						.timeline()
-						.to(bulletRef.current, {
-							width: 'calc(100% - 1.5rem)',
-							borderRadius: '1.875rem',
-							maxHeight: maxHeight
-						})
-						.to(titleRef.current, {
-							opacity: 0
-						})
-						.to(childRef.current, {
-							opacity: 1,
-							delay: 0.3
-						})
-				},
-				onLeaveBack: self => {
-					gsap
-						.timeline()
-						.to(childRef.current, {
-							opacity: 0
-						})
-						.to(bulletRef.current, {
-							width: '',
-							borderRadius: '',
-							maxHeight: ''
-						})
+	// useGSAP(
+	// 	() => {
+	// 		ScrollTrigger.create({
+	// 			trigger: bulletRef.current,
+	// 			start: 'top 75%',
+	// 			end: 'bottom 25%',
+	// 			onEnter: self => {
+	// 				gsap
+	// 					.timeline()
+	// 					.to(bulletRef.current, {
+	// 						width: 'calc(100% - 1.5rem)',
+	// 						borderRadius: '1.875rem',
+	// 						maxHeight: maxHeight
+	// 					})
+	// 					.to(titleRef.current, {
+	// 						opacity: 0
+	// 					})
+	// 					.to(childRef.current, {
+	// 						opacity: 1,
+	// 						delay: 0.3
+	// 					})
+	// 			},
+	// 			onLeaveBack: self => {
+	// 				gsap
+	// 					.timeline()
+	// 					.to(childRef.current, {
+	// 						opacity: 0
+	// 					})
+	// 					.to(bulletRef.current, {
+	// 						width: '',
+	// 						borderRadius: '',
+	// 						maxHeight: ''
+	// 					})
 
-						.to(titleRef.current, {
-							opacity: 1
-						})
-				}
-			})
-		},
-		{
-			scope: bulletRef,
-			dependencies: [isActive, setIsActive, bulletRef, titleRef, maxHeight]
-		}
-	)
+	// 					.to(titleRef.current, {
+	// 						opacity: 1
+	// 					})
+	// 			}
+	// 		})
+	// 	},
+	// 	{
+	// 		scope: bulletRef,
+	// 		dependencies: [isActive, setIsActive, bulletRef, titleRef, maxHeight]
+	// 	}
+	// )
 
 	return (
 		<div

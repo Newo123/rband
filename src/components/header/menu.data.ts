@@ -11,11 +11,11 @@ export const menu = [
 		title: 'Мы'
 	},
 	{
-		href: 'projects/project',
+		href: '/projects/category',
 		title: 'Проекты'
 	},
 	{
-		href: '#',
+		href: '/blog/category',
 		title: 'Блог'
 	},
 	{

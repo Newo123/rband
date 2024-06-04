@@ -1,5 +1,5 @@
 .bullet {
-	@apply h-full max-h-[8.75rem] w-[8.75rem] transition-all overflow-hidden duration-500 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 rounded-full bg-[#000000] text-white flex items-center justify-center;
+	@apply relative h-full max-h-[8.75rem] w-[8.75rem] transition-all overflow-hidden duration-500 rounded-full bg-[#000000] text-white flex items-center justify-center;
 
 	@screen sm {
 		@apply max-h-[11.25rem] w-[11.25rem];
@@ -7,6 +7,8 @@
 	@screen lg {
 		@apply w-[15rem] max-h-[15rem];
 	}
+
+	@apply w-full h-[240px];
 	&_active {
 		width: calc(100% - 1.5rem);
 		border-radius: 1.875rem;
