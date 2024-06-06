@@ -1,0 +1,110 @@
+.heroAbout {
+	@apply bg-black relative text-white pt-[6.438rem] pb-[10.875rem];
+
+	@screen xs {
+		@apply pt-[6.75rem] pb-[13.5rem];
+	}
+	@screen sm {
+		@apply pt-[7.875rem] pb-[20.125rem];
+	}
+
+	@screen lg {
+		@apply pt-[8.875rem] pb-[13.938rem];
+	}
+	@screen xl {
+		@apply pt-[9.5rem] pb-[25rem];
+	}
+
+	&__container {
+		@apply flex flex-col gap-[1.875rem] items-center;
+
+		@screen sm {
+			@apply gap-[2.5rem];
+		}
+		@screen xl {
+			@apply gap-[3.125rem];
+		}
+	}
+
+	&__content {
+		@apply flex flex-col items-center gap-[.625rem] max-w-[53.563rem];
+	}
+
+	&__title {
+		@apply text-center;
+	}
+	&__text {
+		@apply text-[1.125rem] font-medium leading-150 text-center;
+
+		@screen xs {
+			@apply text-[1.25rem];
+		}
+		@screen lg {
+			@apply text-[1.375rem];
+		}
+	}
+	&__texts {
+		@apply flex flex-col gap-[.75rem] relative z-[1];
+
+		@screen sm {
+			@apply flex-row gap-[2.625rem] justify-between;
+		}
+		@screen lg {
+			@apply max-w-[53.563rem] gap-[2.5rem];
+		}
+		@screen 2xl {
+			@apply gap-[3.125rem];
+		}
+	}
+	&__textsBox {
+		@apply flex-col gap-[.75rem] hidden first:flex;
+
+		@screen xs {
+			@apply flex;
+		}
+
+		@screen lg {
+			@apply gap-[1rem];
+		}
+	}
+	&__textsItem {
+		@apply text-[.875rem] font-normal leading-150 text-center;
+
+		@screen xs {
+			@apply text-[1rem];
+		}
+
+		@screen sm {
+			@apply text-left;
+		}
+
+		@screen lg {
+			@apply text-[1.125rem];
+		}
+	}
+
+	&__pictures {
+		@apply absolute bottom-0 left-0 w-full h-[12.875rem];
+
+		@screen xs {
+			@apply h-[18.25rem];
+		}
+
+		@screen sm {
+			@apply h-[22.125rem];
+		}
+
+		@screen lg {
+			@apply h-[18.75rem];
+		}
+
+		@screen xl {
+			@apply h-[30rem];
+		}
+
+		img,
+		video {
+			@apply w-full h-full object-cover object-center relative;
+		}
+	}
+}

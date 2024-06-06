@@ -14,7 +14,8 @@ export function AdvantagesImages({
 		<div
 			className={cn(
 				classes.advantages__imgContainer,
-				isHome ? classes.advantages__imgContainer_rounded : ''
+				isHome ? classes.advantages__imgContainer_rounded : '',
+				isHome ? classes.advantages__imgContainer_gray : ''
 			)}
 		>
 			{advantages.map(advantage => (

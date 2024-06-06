@@ -1,14 +1,14 @@
 .about {
-	@apply pb-[3.125rem];
+	@apply py-[3.125rem];
 
 	@screen sm {
-		@apply pb-[3.75rem];
+		@apply py-[3.75rem];
 	}
 	@screen lg {
-		@apply pb-[5.625rem];
+		@apply py-[4.375rem];
 	}
-	@screen 2xl {
-		@apply pb-[5rem];
+	@screen xl {
+		@apply py-[5.25rem];
 	}
 
 	&__container {
@@ -23,6 +23,22 @@
 		}
 		@screen 2xl {
 			@apply mt-[3.75rem];
+		}
+	}
+
+	&__textWrap {
+		@apply mb-[1.25rem];
+		@screen sm {
+			@apply mb-[1.875rem];
+		}
+		@screen lg {
+			@apply mb-[3.125rem];
+		}
+		@screen xl {
+			@apply mt-[2.25rem];
+		}
+		@screen 2xl {
+			@apply mb-[3.75rem];
 		}
 	}
 
@@ -53,7 +69,8 @@
 		}
 	}
 	&__blockButton {
-		@apply mt-[0.625rem] hidden bg-[#666666] text-white;
+		@apply mt-[0.625rem] hidden  text-white;
+		background: #989898 !important;
 
 		@screen lg {
 			@apply block;
@@ -88,6 +105,12 @@
 	}
 	&__contentHeadVideo {
 		@apply relative rounded-[0.625rem] overflow-hidden min-w-[35%];
+
+		aspect-ratio: 1 / 1;
+
+		@screen sm {
+			@apply aspect-auto;
+		}
 
 		&::before {
 			@apply content-[''] bg-black bg-opacity-5 absolute top-0 left-0 w-full h-full z-[3];
@@ -178,7 +201,8 @@
 		}
 	}
 	&__contentProjectsButton {
-		@apply bg-[#989898] text-white mt-[1.25rem];
+		@apply text-white mt-[1.25rem];
+		background: #989898 !important;
 
 		@screen xs {
 			@apply mt-[1.625rem];
@@ -191,6 +215,11 @@
 			@apply hidden;
 		}
 	}
+
+	&__contentProjectsMobile_centered &__contentProjectsMobileTitle,
+	&__contentProjectsMobile_centered &__contentProjectsMobileText {
+		@apply text-center;
+	}
 	&__contentProjectsMobileTitle {
 		@apply text-[1.5rem] font-black leading-110;
 		font-family: var(--font-intro);
@@ -201,6 +230,10 @@
 	}
 	&__contentProjectsMobileText {
 		@apply text-[.875rem] font-medium leading-140;
+	}
+
+	&__contentProjectsMobile_centered &__contentProjectsButton {
+		@apply mx-auto;
 	}
 
 	&__contentProjectsItem {

@@ -1,5 +1,24 @@
 .stages {
-	@apply bg-[#E5E5E5];
+	@apply bg-[#E5E5E5] mt-[4rem];
+
+	@screen xs {
+		@apply mt-[5rem];
+	}
+	@screen sm {
+		@apply mt-[6.25rem];
+	}
+	@screen md {
+		@apply mt-[7.5rem];
+	}
+	@screen lg {
+		@apply mt-[8.75rem];
+	}
+	@screen xl {
+		@apply mt-[10rem];
+	}
+	@screen 2xl {
+		@apply mt-[12.5rem];
+	}
 
 	&__container {
 		@apply mt-[1rem] flex flex-col items-center relative;

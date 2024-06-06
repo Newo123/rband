@@ -1,26 +1,14 @@
 .ourProjects {
-	@apply pb-[5rem] pt-[2.5rem] overflow-hidden;
-
+	@apply pt-[2.5rem];
 	@screen xs {
-		@apply pb-[7rem] pt-[3.125rem];
+		@apply pt-[3.125rem];
 	}
 	@screen sm {
-		@apply pb-[8rem] pt-[3.75rem];
-	}
-
-	@screen md {
-		@apply pb-[10rem];
+		@apply pt-[3.75rem];
 	}
 
 	@screen lg {
 		@apply pt-[3rem];
-	}
-
-	@screen xl {
-		@apply pb-[11.5rem];
-	}
-	@screen 2xl {
-		@apply pb-[12.5rem];
 	}
 
 	&__container {

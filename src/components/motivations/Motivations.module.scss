@@ -34,6 +34,26 @@
 			@apply mt-[-4rem];
 		}
 	}
+	&_about {
+		@apply mt-[3.125rem];
+
+		@screen sm {
+			@apply mt-[4.375rem];
+		}
+
+		@screen lg {
+			@apply mt-[5.25rem];
+		}
+		@screen xl {
+			@apply mt-[7.125rem];
+		}
+		@screen 2xl {
+			@apply mt-[7.5rem];
+		}
+	}
+	&_about &__textWrap {
+		margin-top: 0 !important;
+	}
 	&__container {
 		@apply flex flex-col gap-[1.5rem];
 

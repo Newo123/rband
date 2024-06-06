@@ -54,6 +54,11 @@
 				}
 			}
 		}
+		&_gray {
+			&::before {
+				background: #e0e0e0;
+			}
+		}
 	}
 
 	&__imgCount {

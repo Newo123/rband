@@ -8,7 +8,7 @@ import classes from './styles.module.scss'
 
 type TypeTextWrapVariant = 'reverse'
 
-type TypeImages = {
+export type TypeImages = {
 	image: string
 	text: string
 }

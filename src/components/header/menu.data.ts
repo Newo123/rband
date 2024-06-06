@@ -7,7 +7,7 @@ export const menu = [
 		title: 'Услуги'
 	},
 	{
-		href: '#',
+		href: '/about',
 		title: 'Мы'
 	},
 	{
