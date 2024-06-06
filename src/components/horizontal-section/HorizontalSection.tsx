@@ -31,7 +31,7 @@ const cards: TypeHorizontalSectionPerson[] = [
 export function HorizontalSection({}: IHorizontalSection) {
 	const targetRef = useRef<HTMLDivElement | null>(null)
 	const textRef = useRef<HTMLDivElement | null>(null)
-	const [width, setWidth] = useState<number>(window.innerWidth)
+	const [width, setWidth] = useState<number>(0)
 	const { scrollYProgress } = useScroll({
 		target: targetRef
 	})
