@@ -154,3 +154,8 @@ body {
 		color: #fff !important;
 	}
 }
+
+#banner {
+	@apply bg-black fixed top-0 w-full h-full left-0 z-[9999];
+	transition: cubic-bezier();
+}

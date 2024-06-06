@@ -2,7 +2,6 @@
 
 import { Icon } from '@iconify/react'
 import cn from 'clsx'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useContext, useEffect, useState } from 'react'
 
@@ -12,6 +11,7 @@ import { useScroll } from '@/hooks/useScroll'
 
 import { Contacts } from '../contacts/Contacts'
 import { Localization } from '../localization/Localization'
+import { TransitionLink } from '../transition-link/TransitionLink'
 import { Container } from '../ui/container/Container'
 
 import { HeaderNav } from './HeaderNav'
@@ -92,12 +92,18 @@ export function Header() {
 				className={classes.header__container}
 			>
 				<div className={classes.header__left}>
-					<Link
+					<TransitionLink
+						href='/'
+						className={classes.header__logo}
+					>
+						RBAND
+					</TransitionLink>
+					{/* <Link
 						className={classes.header__logo}
 						href='/'
 					>
 						RBAND
-					</Link>
+					</Link> */}
 					{menu.length > 0 && <HeaderNav />}
 				</div>
 				<div className={classes.header__right}>

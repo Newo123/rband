@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { TransitionLink } from '../transition-link/TransitionLink'
 
 import classes from './styles.module.scss'
 
@@ -10,12 +10,18 @@ type TypeProps = {
 export function HeaderNavItem({ href, title }: TypeProps) {
 	return (
 		<li className={classes.header__listItem}>
-			<Link
+			<TransitionLink
 				href={href}
 				className={classes.header__listItemLink}
 			>
 				{title}
-			</Link>
+			</TransitionLink>
+			{/* <Link
+				href={href}
+				className={classes.header__listItemLink}
+			>
+				{title}
+			</Link> */}
 		</li>
 	)
 }
