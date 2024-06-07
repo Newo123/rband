@@ -46,22 +46,21 @@
 	}
 
 	&__logo {
-		@apply shrink-0;
-		// h-[5.625rem]
-		// @screen xs {
-		// 	@apply h-[7.5rem];
-		// }
-
-		// @screen sm {
-		// 	@apply h-[11.25rem];
-		// }
+		@apply shrink-0 hidden;
 
 		@screen lg {
-			@apply h-[20rem];
+			@apply h-[20rem] block;
 		}
 
 		@screen 2xl {
 			@apply h-[26.75rem];
+		}
+		&_mobile {
+			@apply block;
+
+			@screen lg {
+				@apply hidden;
+			}
 		}
 
 		svg {
@@ -87,6 +86,10 @@
 
 		@screen sm {
 			@apply flex-row gap-[3.75rem];
+		}
+
+		@media (max-width: 992px) {
+			transform: none !important;
 		}
 
 		@screen lg {

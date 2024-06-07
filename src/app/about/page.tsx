@@ -5,6 +5,7 @@ import { About } from '@/components/about/About'
 import { HeroAbout } from '@/components/hero-about/HeroAbout'
 import { HorizontalSection } from '@/components/horizontal-section/HorizontalSection'
 import { Motivations } from '@/components/motivations/Motivations'
+import { ProjectsMap } from '@/components/projects-map/ProjectsMap'
 
 export const metadata: Metadata = {
 	title: 'About',
@@ -197,7 +198,7 @@ const Page: FC<IPage> = () => {
 				reviews={aboutReviews}
 			/>
 			<HorizontalSection />
-			{/* / */}
+			<ProjectsMap />
 			<Motivations
 				motivations={motivations}
 				textWrap={text}
