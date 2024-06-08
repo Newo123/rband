@@ -271,7 +271,7 @@
 		@apply text-[.75rem] leading-140 font-medium;
 	}
 	&__contentProjectsItemMore {
-		@apply mt-auto text-[.75rem] leading-130 font-bold text-[#AE2524];
+		@apply mt-auto text-[.75rem] leading-130 font-semibold text-[#AE2524];
 	}
 	&__contentProjectsItemLink {
 		@apply absolute top-0 left-0 w-full h-full z-[4];

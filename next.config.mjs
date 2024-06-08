@@ -5,6 +5,7 @@ const nextConfig = {
 	experimental: {
 		optimizePackageImports: ['gsap', '@iconify/react', 'swiper']
 	},
+
 	images: {
 		formats: ['image/avif', 'image/webp'],
 		minimumCacheTTL: 60,
@@ -17,4 +18,5 @@ const nextConfig = {
 		]
 	}
 }
+
 export default nextConfig

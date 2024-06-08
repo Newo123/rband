@@ -106,6 +106,13 @@
 		}
 	}
 	&__dot {
-		@apply w-[2rem] h-[2rem] absolute top-0 left-0 rounded-full overflow-hidden bg-[#AE2524] box-content border-[.25rem] border-white flex items-center justify-center text-[1.25rem] text-white font-bold leading-110;
+		@apply w-[2rem] h-[2rem] absolute top-0 left-0 rounded-full overflow-hidden bg-[#AE2524] box-content border-[.063rem] border-white flex items-center justify-center text-[.875rem] text-white font-bold leading-110;
+
+		@screen xs {
+			@apply text-[1.25rem] border-[.125rem];
+		}
+		@screen sm {
+			@apply border-[.25rem];
+		}
 	}
 }

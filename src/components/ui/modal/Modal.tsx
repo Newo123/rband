@@ -33,7 +33,6 @@ const Modal = ({
 						duration: 0.4,
 						onStart: () => {
 							document.body.style.overflowY = 'hidden'
-							document.body.style.marginRight = '1.063rem'
 						}
 					})
 					.to(modalRef.current, {
@@ -70,7 +69,6 @@ const Modal = ({
 						duration: 0.4,
 						onComplete: () => {
 							document.body.style.overflowY = 'scroll'
-							document.body.style.marginRight = '0'
 						}
 					})
 			}

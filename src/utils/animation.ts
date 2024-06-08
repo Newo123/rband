@@ -24,8 +24,8 @@ export const animationPageIn = () => {
 			yPercent: 0
 		}).to([banner1], {
 			yPercent: -100,
-			ease: 'power3.inOut',
-			delay: 0.2
+			ease: 'power3.inOut'
+			// delay: 0.2
 		})
 	}
 }

@@ -6,13 +6,13 @@
 	}
 
 	@screen lg {
-		@apply h-[220vh] py-0;
+		@apply h-[320vh] py-0;
 	}
 	@screen xl {
-		@apply h-[270vh];
+		@apply h-[370vh];
 	}
 	@screen 2xl {
-		@apply h-[300vh];
+		@apply h-[400vh];
 	}
 	&__container {
 		@apply h-full;
@@ -67,7 +67,7 @@
 			@apply h-full w-full;
 
 			path {
-				@apply stroke-[#989898];
+				@apply stroke-[#989898] stroke-[.125rem];
 				@screen lg {
 					@apply stroke-white;
 				}
