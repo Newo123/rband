@@ -26,13 +26,13 @@
 			@apply gap-[3.125rem];
 		}
 	}
-}
 
-.faqList {
-	@apply flex flex-col gap-[1.625rem] w-full;
+	&__list {
+		@apply flex flex-col gap-[1.625rem] w-full;
 
-	@screen sm {
-		@apply gap-[1.875rem];
+		@screen sm {
+			@apply gap-[1.875rem];
+		}
 	}
 }
 

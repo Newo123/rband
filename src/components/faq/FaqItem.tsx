@@ -1,5 +1,8 @@
+'use client'
+
 import { Icon } from '@iconify/react'
 import cn from 'clsx'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
 
@@ -7,17 +10,29 @@ import { TypeFaqItem } from '@/store/faq.store'
 
 import { Typography } from '../typography/Typography'
 import { TypographyContainer } from '../typography/TypographyContainer'
-import Heading from '../ui/Heading/Heading'
 
 import classes from './styles.module.scss'
+
+const variants = {
+	active: {
+		opacity: 1,
+		y: 0
+	},
+	inactive: {
+		opacity: 1,
+		y: 0
+	}
+}
 
 export const FaqItem = ({ title, typography }: TypeFaqItem) => {
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 
 	return (
-		<Heading
-			tag='div'
-			className={cn(classes.faqItem, isOpen ? classes.faqItem_active : '')}
+		<motion.div
+			initial={{ opacity: 1, y: 0 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true }}
+			className={cn(classes.faqItem, isOpen && classes.faqItem_active)}
 		>
 			<div
 				className={classes.faqItem__head}
@@ -35,6 +50,6 @@ export const FaqItem = ({ title, typography }: TypeFaqItem) => {
 					</TypographyContainer>
 				</Typography>
 			</div>
-		</Heading>
+		</motion.div>
 	)
 }

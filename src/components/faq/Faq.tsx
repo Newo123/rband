@@ -6,7 +6,6 @@ import Heading from '../ui/Heading/Heading'
 import { Container } from '../ui/container/Container'
 
 import { FaqItem } from './FaqItem'
-import { FaqList } from './FaqList'
 import classes from './styles.module.scss'
 
 export function Faq() {
@@ -24,7 +23,7 @@ export function Faq() {
 					{faq.title}
 				</Heading>
 				{faq.items.length > 0 && (
-					<FaqList>
+					<div className={classes.faq__list}>
 						{faq.items.map((item, index) => (
 							<FaqItem
 								title={item.title}
@@ -32,7 +31,7 @@ export function Faq() {
 								key={index}
 							/>
 						))}
-					</FaqList>
+					</div>
 				)}
 			</Container>
 		</section>

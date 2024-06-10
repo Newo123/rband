@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import cn from 'clsx'
 import type { Metadata } from 'next/types'
 import { ReactNode } from 'react'
@@ -37,6 +38,7 @@ export default function RootLayout({ children, params }: Readonly<Props>) {
 					<Footer />
 				</Providers>
 			</body>
+			<GoogleAnalytics gaId='G-WPQGY8HTM0' />
 		</html>
 	)
 }
