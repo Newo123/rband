@@ -19,11 +19,12 @@ export function Providers({ children }: PropsWithChildren) {
 	)
 	return (
 		<YandexMetricaProvider
-			tagID={97533344}
+			tagID={32609040}
 			initParameters={{
 				clickmap: true,
 				trackLinks: true,
-				accurateTrackBounce: true
+				accurateTrackBounce: true,
+				webvisor: true
 			}}
 		>
 			<QueryClientProvider client={client}>
