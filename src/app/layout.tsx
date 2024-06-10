@@ -38,7 +38,7 @@ export default function RootLayout({ children, params }: Readonly<Props>) {
 					<Footer />
 				</Providers>
 			</body>
-			<GoogleAnalytics gaId='G-WPQGY8HTM0' />
+			<GoogleAnalytics gaId='UA-138430986-1' />
 		</html>
 	)
 }
