@@ -50,6 +50,9 @@ importers:
       next-view-transitions:
         specifier: ^0.2.0
         version: 0.2.0(next@14.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next-yandex-metrica:
+        specifier: ^1.1.2
+        version: 1.1.2(next@14.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2))(react@18.3.1)
       plaiceholder:
         specifier: ^3.0.0
         version: 3.0.0(sharp@0.33.4)
@@ -1534,6 +1537,12 @@ packages:
       next: ^14.0.0
       react: ^18.2.0
       react-dom: ^18.2.0
+
+  next-yandex-metrica@1.1.2:
+    resolution: {integrity: sha512-gHlf3qTFY1PMyk/hqLwKKGkIs5XUa+ALQQb2xcTLR9PKxoD35O5eCzR34LRwgCtdMyHunQ1VSyn33E1l9AOWDA==}
+    peerDependencies:
+      next: '>=11.0.0'
+      react: '>=17.0.0'
 
   next@14.2.1:
     resolution: {integrity: sha512-SF3TJnKdH43PMkCcErLPv+x/DY1YCklslk3ZmwaVoyUfDgHKexuKlf9sEfBQ69w+ue8jQ3msLb+hSj1T19hGag==}
@@ -3679,6 +3688,11 @@ snapshots:
       next: 14.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  next-yandex-metrica@1.1.2(next@14.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2))(react@18.3.1):
+    dependencies:
+      next: 14.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2)
+      react: 18.3.1
 
   next@14.2.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.2):
     dependencies:
