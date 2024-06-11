@@ -25,12 +25,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 					variant='xl'
 					className='flex items-center h-screen'
 				>
-					<h6
-						id='text-logo'
-						className=''
-					>
-						RBAND
-					</h6>
+					<h6 id='logo'>RBAND</h6>
 				</Container>
 			</div>
 		</>
