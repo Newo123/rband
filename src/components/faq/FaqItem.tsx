@@ -43,7 +43,10 @@ export const FaqItem = ({ title, typography }: TypeFaqItem) => {
 					<Icon icon='ph:plus' />
 				</div>
 			</div>
-			<div className={classes.faqItem__body}>
+			<div
+				className={classes.faqItem__body}
+				data-lenis-prevent
+			>
 				<Typography>
 					<TypographyContainer>
 						{ReactHtmlParser(typography)}

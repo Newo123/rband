@@ -17,7 +17,8 @@ import '@/styles/globals.scss'
 export const metadata: Metadata = {
 	title: 'RBAND',
 	description: 'RBAND Home page',
-	icons: '/favicon.png'
+	icons: '/favicon.png',
+	manifest: '/manifest.json'
 }
 
 type Props = {

@@ -1,9 +1,15 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 	experimental: {
-		optimizePackageImports: ['gsap', '@iconify/react', 'swiper']
+		optimizePackageImports: [
+			'gsap',
+			'@iconify/react',
+			'swiper',
+			'framer-motion'
+		]
 	},
 
 	images: {
