@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react'
 
+import { Container } from '@/components/ui/container/Container'
+
 import { animationPageIn } from '@/utils/animation'
 
 export default function Template({ children }: { children: React.ReactNode }) {
@@ -12,15 +14,24 @@ export default function Template({ children }: { children: React.ReactNode }) {
 		<>
 			{children}
 			<div
-				id='banner1'
-				className='min-h-screen bg-[#1a1717] z-[999] fixed top-0 w-full left-0 flex items-center justify-center'
+				id='banner'
+				className='min-h-screen bg-[#1a1717] z-[999] fixed top-0 w-full left-0'
 			>
-				<h6 className='text-[24px] font-semibold leading-120 tracking-[0.04em] text-white'>
-					RBAND
-					<span className='opacity-[0.15]'>.</span>
-					<span className='opacity-[0.30]'>.</span>
-					<span className='opacity-[1]'>.</span>
-				</h6>
+				<span
+					className='loader'
+					id='loader'
+				></span>
+				<Container
+					variant='xl'
+					className='flex items-center h-screen'
+				>
+					<h6
+						id='text-logo'
+						className=''
+					>
+						RBAND
+					</h6>
+				</Container>
 			</div>
 		</>
 	)
